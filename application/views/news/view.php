@@ -1,2 +1,1 @@
-<?php
-echo '<h2>' . $news_item['title'] . '</h2>';
+<h2><?php echo $news_item['title']; ?></h2>
