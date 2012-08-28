@@ -41,9 +41,14 @@
 # $route['default_controller'] = "welcome";
 # $route['404_override'] = '';
 
+// News controller
+
 $route['news/create'] = 'news/create';
 $route['news/(:any)'] = 'news/view/$1';
 $route['news'] = 'news';
+
+// Static routes
+
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'pages/view';
 
