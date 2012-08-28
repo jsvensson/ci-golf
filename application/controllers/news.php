@@ -44,11 +44,11 @@ class News extends CI_Controller {
 
 	public function view($id)
 	{
-		$data['news'] = $this->news_model->get_news($id);
+		$data['news_item'] = $this->news_model->get_news($id);
 
 		if (empty($data['news_item']))
 		{
-			show_404();
+			show_404('News controller: ' . $id);
 		}
 
 		$data['title'] = $data['news_item']['title'];
