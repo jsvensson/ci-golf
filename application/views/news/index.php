@@ -5,5 +5,5 @@
 	<div id="main">
 		<?php echo $news_item['text'] ?>
 	</div>
-	<p><?php echo anchor('news/' . $news_item['id'], 'View article'); ?></p>
+	<p><?php echo anchor('news/' . $news_item['id'] . '/' . $news_item['slug'], 'Visa nyhet'); ?></p>
 <?php endforeach ?>
