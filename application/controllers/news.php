@@ -25,6 +25,7 @@ class News extends CI_Controller {
 
 		$data['title'] = 	'Create news item';
 
+		// Form validation
 		$this->form_validation->set_rules('title', 'Title', 'required');
 		$this->form_validation->set_rules('text', 'Text', 'required');
 
@@ -41,9 +42,9 @@ class News extends CI_Controller {
 		}
 	}
 
-	public function view($slug)
+	public function view($id)
 	{
-		$data['news'] = $this->news_model->get_news($slug);
+		$data['news'] = $this->news_model->get_news($id);
 
 		if (empty($data['news_item']))
 		{
