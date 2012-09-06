@@ -1,1 +1,1 @@
-About page
+<h1>Info-sida</h1>
