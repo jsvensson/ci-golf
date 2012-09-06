@@ -45,8 +45,8 @@
 
 $route['news/create'] 				= 'news/create';
 $route['news/(:num)/(:any)'] 	= 'news/view/$1';
-$route['news/:num)'] 					= 'news/view/$1';
-$route['news'] 								= 'news';
+// $route['news/:num)'] 					= 'news/view/$1';
+$route['news'] 								= 'news/index';
 
 // Static routes
 
