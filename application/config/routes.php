@@ -50,7 +50,8 @@ $route['news'] 								= 'news/index';
 
 // User controller
 
-$route['user'] = 'user/index';
+$route['user']        = 'user/index';
+$route['user/(:any)'] = 'user/$1'; 
 
 // Static routes
 
