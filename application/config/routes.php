@@ -48,6 +48,10 @@ $route['news/(:num)/(:any)'] 	= 'news/view/$1';
 // $route['news/:num)'] 					= 'news/view/$1';
 $route['news'] 								= 'news/index';
 
+// User controller
+
+$route['user'] = 'user/index';
+
 // Static routes
 
 $route['(:any)'] = 'pages/view/$1';
