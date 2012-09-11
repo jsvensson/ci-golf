@@ -4,7 +4,7 @@
 $this->lang->load('menu')
 
 ?><!DOCTYPE html>
-<html lang="sv">
+<html lang="<?= $this->lang->line('doctype_lang') ?>">
 <head>
 	<title><?= $title ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -22,21 +22,8 @@ $this->lang->load('menu')
 				</a>
 				<a class="brand" href="<?= base_url(); ?>"><?= $this->lang->line('menu_item_brand') ?></a>
 				<ul class="nav">
-					<li><?= anchor('news', $this->lang->line('menu_item_news')) ?></li>
+					<li class="active"><?= anchor('news', $this->lang->line('menu_item_news')) ?></li>
 					<li><?= anchor('about', $this->lang->line('menu_item_information')) ?></li>
-
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li class="nav-header">Nav header</li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-           </li>
 				</ul>
 
 				<form class="navbar-form pull-right">

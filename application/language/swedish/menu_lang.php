@@ -1,5 +1,9 @@
 <?php // Språkdefinition för menyn på svenska
 
+// Doctype language
+
+$lang['doctype_lang'] = 'sv';
+
 // Navbar items
 
 $lang['menu_item_brand']       = 'Golf';
