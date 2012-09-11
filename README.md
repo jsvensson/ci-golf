@@ -6,15 +6,19 @@
 
 ### Views
 
-#### /register
+#### /join
 
-* `register` --  registrering av ny användare. Controller `user/register`.
+* `join` --  registrering av ny användare. Controller `user/join`.
+
+#### /create (Använda?)
+
+* `create` -- skapa ny användare. Controller `user/create`. Används enbart av formulär. Dirigerar om till inloggning om en ny användare registrerar sig, eller `account/(:num)` om kontot skapas av en admin.
 
 #### /home
 
 Allting under `/home` ska kräva inloggning; ska annars ge felmeddelande och länka till användarregistrering.
 
-* `home` -- personlig vy för sin egen användarprofil. Controller `user/index`.
+* `home` -- personlig vy för sin egen användarprofil. Controller `user/home`.
 * `home/edit` -- redigering av sin användarprofil. Controller `user/edit`.
 
 #### /user
