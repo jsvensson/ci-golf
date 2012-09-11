@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+
+// Load language file
+$this->lang->load('menu')
+
+?><!DOCTYPE html>
 <html lang="sv">
 <head>
 	<title><?= $title ?></title>
@@ -15,10 +20,10 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="<?= base_url(); ?>">Golf</a>
+				<a class="brand" href="<?= base_url(); ?>"><?= $this->lang->line('menu_item_brand') ?></a>
 				<ul class="nav">
-					<li><?= anchor('news', 'Nyheter') ?></li>
-					<li><?= anchor('about', 'Information') ?></li>
+					<li><?= anchor('news', $this->lang->line('menu_item_news')) ?></li>
+					<li><?= anchor('about', $this->lang->line('menu_item_information')) ?></li>
 
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
@@ -35,9 +40,9 @@
 				</ul>
 
 				<form class="navbar-form pull-right">
-					<input class="span2" type="text" placeholder="Email">
-					<input class="span2" type="password" placeholder="Lösenord">
-					<button type="submit" class="btn">Logga in</button>
+					<input class="span2" type="text" placeholder="<?= $this->lang->line('menu_login_email') ?>">
+					<input class="span2" type="password" placeholder="<?= $this->lang->line('menu_login_password') ?>">
+					<button type="submit" class="btn"><?= $this->lang->line('menu_login_submit') ?></button>
 				</form>
 			</div><!-- end .container -->
 		</div><!-- end .navbar-inner -->
