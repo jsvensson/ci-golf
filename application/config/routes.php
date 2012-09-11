@@ -43,10 +43,10 @@
 
 // News controller
 
-$route['news/create'] 				= 'news/create';
-$route['news/(:num)/(:any)'] 	= 'news/view/$1';
-// $route['news/:num)'] 					= 'news/view/$1';
-$route['news'] 								= 'news/index';
+$route['news/create']        = 'news/create';
+$route['news/(:num)/(:any)'] = 'news/view/$1';
+// $route['news/:num)']      = 'news/view/$1';
+$route['news']               = 'news/index';
 
 // User controller
 
@@ -55,7 +55,7 @@ $route['user/(:any)'] = 'user/$1';
 
 // Static routes
 
-$route['(:any)'] = 'pages/view/$1';
+$route['(:any)']             = 'pages/view/$1';
 $route['default_controller'] = 'pages/view';
 
 /* End of file routes.php */
