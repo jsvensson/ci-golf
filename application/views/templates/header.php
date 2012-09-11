@@ -22,15 +22,16 @@ $this->lang->load('menu')
 				</a>
 				<a class="brand" href="<?= base_url(); ?>"><?= $this->lang->line('menu_item_brand') ?></a>
 				<ul class="nav">
+					<li><?= anchor('home', $this->lang->line('menu_item_home')) ?></li>
 					<li class="active"><?= anchor('news', $this->lang->line('menu_item_news')) ?></li>
 					<li><?= anchor('about', $this->lang->line('menu_item_information')) ?></li>
-					<li><?= anchor('user', $this->lang->line('menu_item_users')) ?></li>
 				</ul>
 
 				<form class="navbar-form pull-right">
 					<input class="span2" type="text" placeholder="<?= $this->lang->line('menu_login_email') ?>">
 					<input class="span2" type="password" placeholder="<?= $this->lang->line('menu_login_password') ?>">
 					<button type="submit" class="btn"><?= $this->lang->line('menu_login_submit') ?></button>
+					<button type="submit" class="btn"><?= $this->lang->line('menu_login_register') ?></button>
 				</form>
 			</div><!-- end .container -->
 		</div><!-- end .navbar-inner -->
