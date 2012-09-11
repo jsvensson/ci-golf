@@ -24,6 +24,7 @@ $this->lang->load('menu')
 				<ul class="nav">
 					<li class="active"><?= anchor('news', $this->lang->line('menu_item_news')) ?></li>
 					<li><?= anchor('about', $this->lang->line('menu_item_information')) ?></li>
+					<li><?= anchor('user', $this->lang->line('menu_item_users')) ?></li>
 				</ul>
 
 				<form class="navbar-form pull-right">

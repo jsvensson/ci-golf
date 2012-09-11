@@ -8,7 +8,8 @@ $lang['doctype_lang'] = 'sv';
 
 $lang['menu_item_brand']       = 'Golf';
 $lang['menu_item_news']        = 'Nyheter';
-$lang['menu_item_information'] = 'information';
+$lang['menu_item_information'] = 'Information';
+$lang['menu_item_users']       = 'Användare';
 
 // Login box
 
