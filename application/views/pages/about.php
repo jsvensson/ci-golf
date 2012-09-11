@@ -1,1 +1,1 @@
-<h1>Info-sida</h1>
+<h3>Info-sida</h3>

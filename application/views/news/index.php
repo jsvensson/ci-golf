@@ -1,7 +1,7 @@
+	<h3>Nyheter</h3>
 
 <?php foreach ($news as $news_item): ?>
-
-	<h2><?php echo $news_item['title'] ?></h2>
+	<h4><?php echo $news_item['title'] ?></h4>
 	<div id="main">
 		<?php echo $news_item['text'] ?>
 	</div>
