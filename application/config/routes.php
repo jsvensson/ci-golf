@@ -51,6 +51,8 @@ $route['news']               = 'news/index';
 
 $route['user']        = 'user/index';
 $route['user/(:any)'] = 'user/$1'; 
+$route['join']        = 'user/join';
+
 
 // Static routes
 
