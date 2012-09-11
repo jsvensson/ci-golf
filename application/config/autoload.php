@@ -29,7 +29,7 @@
 
 /*
 | -------------------------------------------------------------------
-|  Auto-load Packges
+|  Auto-load Packages
 | -------------------------------------------------------------------
 | Prototype:
 |
@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('session', 'database');
+$autoload['libraries'] = array('session', 'database', 'parser');
 
 
 /*
