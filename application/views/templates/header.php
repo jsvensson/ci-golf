@@ -1,7 +1,8 @@
 <?php
 
-// Load language file
-$this->lang->load('menu')
+// Load language files
+$this->lang->load('menu');
+$this->lang->load('form');
 
 ?><!DOCTYPE html>
 <html lang="<?= $this->lang->line('doctype_lang') ?>">
@@ -28,10 +29,9 @@ $this->lang->load('menu')
 				</ul>
 
 				<form class="navbar-form pull-right">
-					<input class="span2" type="text" placeholder="<?= $this->lang->line('menu_login_email') ?>">
-					<input class="span2" type="password" placeholder="<?= $this->lang->line('menu_login_password') ?>">
-					<button type="submit" class="btn"><?= $this->lang->line('menu_login_submit') ?></button>
-					<button type="submit" class="btn"><?= $this->lang->line('menu_login_register') ?></button>
+					<input class="span2" type="text" placeholder="<?= $this->lang->line('form_placeholder_email') ?>">
+					<input class="span2" type="password" placeholder="<?= $this->lang->line('form_placeholder_password') ?>">
+					<button type="submit" class="btn"><?= $this->lang->line('form_login_button') ?></button>
 				</form>
 			</div><!-- end .container -->
 		</div><!-- end .navbar-inner -->

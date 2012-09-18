@@ -12,13 +12,5 @@ $lang['menu_item_news']        = 'Nyheter';
 $lang['menu_item_information'] = 'Information';
 $lang['menu_item_users']       = 'Användare';
 
-// Login box
-
-$lang['menu_login_email']      = 'Email';
-$lang['menu_login_password']   = 'Lösenord';
-$lang['menu_login_submit']     = 'Logga in';
-$lang['menu_login_register']   = 'Registrera';
-
-
 
 ?>
