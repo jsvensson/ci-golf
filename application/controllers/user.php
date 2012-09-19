@@ -24,9 +24,6 @@ class User extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
-		// form_lang.php needed for error messages
-		$this->lang->load('form');
-
 		$data['title'] = 'Registrera nytt konto';
 
 		// Custom validation error messages for registration
