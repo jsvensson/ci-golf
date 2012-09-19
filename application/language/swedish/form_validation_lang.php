@@ -27,7 +27,7 @@ $lang['less_than']          = "The %s field must contain a number less than %s."
 $lang['greater_than']       = "The %s field must contain a number greater than %s.";
 
 // Human form descriptions
-$lang['form_name_username']           = "Emailaddress";
-$lang['form_name_password']           = "Lösenord";
-$lang['form_name_verify_password']    = "Upprepat lösenord";
+$lang['form_name_username']        = "Emailaddress";
+$lang['form_name_password']        = "Lösenord";
+$lang['form_name_verify_password'] = "Upprepat lösenord";
 ?>
