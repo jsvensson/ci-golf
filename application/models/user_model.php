@@ -28,7 +28,6 @@ class User_model extends CI_Model {
 			'username'  => $this->input->post('username'),
 			'firstname' => $this->input->post('firstname'),
 			'lastname'  => $this->input->post('lastname'),
-			'status'    => $this->input->post('status'),
 			'level'     => $this->input->post('level'),
 			'password'  => $this->input->post('password'),
 		);
