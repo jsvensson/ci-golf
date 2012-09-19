@@ -1,1 +1,4 @@
-application/logs/*
+*/logs/*
+*/logs/!index.html
+*/cache/*
+*/cache/!index.html
