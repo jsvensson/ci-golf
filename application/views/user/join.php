@@ -1,6 +1,6 @@
 <h3>Registrera nytt konto</h3>
 
-<?= form_open('user/create') ?>
+<?= form_open('user/join') ?>
 
 <label for="email"><?= $this->lang->line('form_label_email') ?></label>
 <input type="text" name="email" placeholder="<?= $this->lang->line('form_placeholder_email') ?>">
