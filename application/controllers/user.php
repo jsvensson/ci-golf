@@ -58,7 +58,11 @@ class User extends CI_Controller {
 	// home(), user/home - view your personal page
 	public function home()
 	{
+		$data['title'] = 'Min profil';
 
+		$this->load->view('templates/header', $data);
+		$this->load->view('user/home');
+		$this->load->view('templates/footer');
 	}
 
 	// edit(), user/edit - edit your own profile
