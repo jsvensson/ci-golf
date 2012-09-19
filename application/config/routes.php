@@ -41,23 +41,30 @@
 # $route['default_controller'] = "welcome";
 # $route['404_override'] = '';
 
+////////////////////////////////////////////////////
 // News controller
 
-$route['news/create']        = 'news/create';
-$route['news/(:num)/(:any)'] = 'news/view/$1';
-$route['news']               = 'news/index';
+	$route['news/create']        = 'news/create';
+	$route['news/(:num)/(:any)'] = 'news/view/$1';
+	$route['news']               = 'news/index';
 
+////////////////////////////////////////////////////
 // User controller
 
-$route['user']        = 'user/index';
-$route['user/(:any)'] = 'user/$1'; 
-$route['join']        = 'user/join';
+	$route['user']        = 'user/index';
+	$route['user/(:any)'] = 'user/$1'; 
+	
+	// Personal page
+	$route['home']        = 'user/home';
+	
+	// User registration
+	$route['join']        = 'user/join';
 
-
+////////////////////////////////////////////////////
 // Static routes
 
-$route['(:any)']             = 'pages/view/$1';
-$route['default_controller'] = 'pages/view/index';
+	$route['(:any)']             = 'pages/view/$1';
+	$route['default_controller'] = 'pages/view/index';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
