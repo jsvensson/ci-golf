@@ -11,7 +11,7 @@ $lang['form_placeholder_lastname']  = 'Efternamn';
 
 
 $lang['form_label_password']        = 'Lösenord';
-$lang['form_label_password_repeat'] = 'Upprepa lösenord';
+$lang['form_label_password_repeat'] = 'Bekräfta lösenord';
 $lang['form_placeholder_password']  = 'Lösenord';
 
 // "Email not unique" validation error on /join page
