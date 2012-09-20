@@ -9,15 +9,18 @@ class User_model extends CI_Model {
 
 	public function get_user($id = FALSE)
 	{
+		$this->db->select("*, CONCAT_WS(' ', firstname, lastname) AS fullname", false);
+
 		if ($id === FALSE)
 		{
-			$this->db->select("*, CONCAT_WS(' ', firstname, lastname) AS fullname", false);
 			$query = $this->db->get('user');
 			return $query->result_array();
 		}
-
-		$query = $this->db->get_where('user', array('id' => $id));
-		return $query->row_array();
+		else
+		{
+			$query = $this->db->get_where('user', array('id' => $id));
+			return $query->row_array();
+		}
 	}
 
 	public function set_user()
