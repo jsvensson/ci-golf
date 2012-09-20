@@ -31,8 +31,8 @@ class User extends CI_Controller {
 		$this->form_validation->set_message('matches', $this->lang->line('form_password_matches'));
 
 		// Form validation
-		$this->form_validation->set_rules('username', 'lang:form_name_username', 'trim|required|min_length[5]|is_unique[user.username]|valid_email');
-		$this->form_validation->set_rules('password', 'lang:form_name_password', 'required|matches[verify_password]');
+		$this->form_validation->set_rules('username', 'lang:form_name_username', 'trim|required|is_unique[user.username]|valid_email');
+		$this->form_validation->set_rules('password', 'lang:form_name_password', 'required|min_length[6]|matches[verify_password]');
 		$this->form_validation->set_rules('verify_password', 'lang:form_name_verify_password', 'required');
 
 		if ($this->form_validation->run() === FALSE)
