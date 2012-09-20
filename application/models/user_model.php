@@ -29,8 +29,8 @@ class User_model extends CI_Model {
 
 		$data = array(
 			'username'  => $this->input->post('username'),
-			'firstname' => $this->input->post('firstname'),
-			'lastname'  => $this->input->post('lastname'),
+			'firstname' => trim($this->input->post('firstname')),
+			'lastname'  => trim($this->input->post('lastname')),
 			'level'     => $this->input->post('level'),
 			'password'  => $this->input->post('password'),
 		);
