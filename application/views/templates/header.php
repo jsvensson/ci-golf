@@ -1,7 +1,7 @@
 <?php
 
 // Load language files
-$this->lang->load('menu');
+$this->lang->load('header');
 $this->lang->load('form');
 
 ?><!DOCTYPE html>
