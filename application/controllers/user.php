@@ -52,7 +52,20 @@ class User extends CI_Controller {
 		}
 	}
 
-	// home(), user/home - view your personal page
+	// Route /user/logout - destroy user session
+	public function logout()
+	{
+		$this->session->unset_userdata('logged_in');
+		redirect(base_url());
+	}
+
+	// Route /user/login - create user session
+	public function login()
+	{
+
+	}
+
+	// Route /home - view your personal page
 	public function home()
 	{
 		$data['title'] = 'Min profil';
