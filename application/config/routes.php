@@ -51,14 +51,19 @@
 ////////////////////////////////////////////////////
 // User controller
 
-	$route['user']        = 'user/index';
-	$route['user/(:any)'] = 'user/$1'; 
-	
 	// Personal page
 	$route['home']        = 'user/home';
 	
 	// User registration
 	$route['join']        = 'user/join';
+	
+	// Log in/out
+	$route['user/login']  = 'user/login';
+	$route['user/logout'] = 'user/logout';
+
+	// Admin views
+	$route['user/(:any)'] = 'user/$1'; 
+	$route['user']        = 'user/index';
 
 ////////////////////////////////////////////////////
 // Static routes
