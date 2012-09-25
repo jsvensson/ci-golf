@@ -1,1 +1,3 @@
-<p>Inloggad!</p>
+<section class="pull-right">
+	<p>Inloggad!</p>
+</section>

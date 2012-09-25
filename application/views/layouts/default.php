@@ -4,11 +4,6 @@
 $this->lang->load('header');
 $this->lang->load('form');
 
-// Data for stuff
-$this->data['form_login_class'] = array('class' => 'navbar-form pull-right');
-
-	
-
 ?><!DOCTYPE html>
 <html lang="<?= $this->lang->line('doctype_lang') ?>">
 <head>

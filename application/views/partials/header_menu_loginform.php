@@ -1,4 +1,4 @@
-				<?= form_open('user/login', $this->data['form_login_class']) ?>
+				<?= form_open('user/login', array('class' => 'navbar-form pull-right')) ?>
 
 					<input class="span2" type="text" placeholder="<?= $this->lang->line('form_placeholder_email') ?>">
 					<input class="span2" type="password" placeholder="<?= $this->lang->line('form_placeholder_password') ?>">
