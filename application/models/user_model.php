@@ -25,14 +25,17 @@ class User_model extends CI_Model {
 
 	public function set_user()
 	{
-		// $this->load->helper('url');
+		$this->load->helper('password');
+
+		// Salt and encrypt password (SHA1)
+		$salted_pw = sha1($this->input->post('password') . password_salt());
 
 		$data = array(
 			'username'  => $this->input->post('username'),
 			'firstname' => trim($this->input->post('firstname')),
 			'lastname'  => trim($this->input->post('lastname')),
 			'level'     => $this->input->post('level'),
-			'password'  => $this->input->post('password'),
+			'password'  => $salted_pw,
 		);
 
 		return $this->db->insert('user', $data);
