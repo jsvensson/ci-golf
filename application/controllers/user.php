@@ -18,7 +18,7 @@ class User extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
-	// user/join - form for registering a new account
+	// Route /join - form for registering a new account
 	public function join()
 	{
 		$this->load->library('form_validation');
@@ -75,7 +75,7 @@ class User extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
-	// edit(), user/edit - edit your own profile
+	// Route /home/edit/ - edit your own profile
 	public function edit()
 	{
 		
