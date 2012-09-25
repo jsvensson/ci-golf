@@ -22,6 +22,7 @@ class User extends CI_Controller {
 	public function join()
 	{
 		$this->load->library('form_validation');
+		$this->lang->load('form');
 
 		$data['title'] = 'Registrera nytt konto';
 
