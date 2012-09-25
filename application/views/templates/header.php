@@ -4,6 +4,11 @@
 $this->lang->load('header');
 $this->lang->load('form');
 
+// Data for stuff
+$data['form_login_class'] = array('class' => 'navbar-form pull-right');
+
+	
+
 ?><!DOCTYPE html>
 <html lang="<?= $this->lang->line('doctype_lang') ?>">
 <head>
@@ -28,11 +33,13 @@ $this->lang->load('form');
 					<li><?= anchor('about', $this->lang->line('menu_item_information')) ?></li>
 				</ul>
 
-				<form class="navbar-form pull-right">
+				<?= form_open('user/login', $data['form_login_class']) ?>
+
 					<input class="span2" type="text" placeholder="<?= $this->lang->line('form_placeholder_email') ?>">
 					<input class="span2" type="password" placeholder="<?= $this->lang->line('form_placeholder_password') ?>">
 					<button type="submit" class="btn"><?= $this->lang->line('form_login_button') ?></button>
-				</form>
+				<?= form_close(); ?>
+
 			</div><!-- end .container -->
 		</div><!-- end .navbar-inner -->
 	</div><!-- end #navbar -->
