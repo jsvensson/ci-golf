@@ -21,7 +21,7 @@ Allting under `/home` ska kräva inloggning; ska annars ge felmeddelande och lä
 
 * `user/(:num)/(:any)` -- vy för ett givet användarkonto. Controller `user/view/$1`.
 * `user/login` -- formulärhantering för inloggning; ingen vy. Controller `user/login`.
-* `user/login` -- formulärhantering för utloggning; ingen vy. Controller `user/logout`.
+* `user/logout` -- formulärhantering för utloggning; ingen vy. Controller `user/logout`.
 
 #### /account
 
