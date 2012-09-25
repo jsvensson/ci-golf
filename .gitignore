@@ -2,3 +2,4 @@
 */logs/!index.html
 */cache/*
 */cache/!index.html
+/application/helpers/password_helper.php
