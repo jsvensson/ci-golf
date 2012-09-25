@@ -1,6 +1,6 @@
 <h3>Registrera nytt konto</h3>
 
-<?php echo validation_errors(); ?>
+<?= validation_errors() ?>
 
 <?= form_open('user/join') ?>
 
