@@ -2,6 +2,8 @@
 
 class User extends CI_Controller {
 
+	public $data = array('subview' => 'No subview given');
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -10,12 +12,11 @@ class User extends CI_Controller {
 
 	public function index()
 	{
-		$data['user'] = $this->user_model->get_user();
-		$data['title'] = 'Visar användare';
+		$this->data['subview'] = 'user/index';
+		$this->data['user'] = $this->user_model->get_user();
+		$this->data['title'] = 'Visar användare';
 
-		$this->load->view('templates/header', $data);
-		$this->load->view('user/index', $data);
-		$this->load->view('templates/footer');
+		$this->load->view('layouts/default', $this->data);
 	}
 
 	// Route /join - form for registering a new account
@@ -24,7 +25,7 @@ class User extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->lang->load('form');
 
-		$data['title'] = 'Registrera nytt konto';
+		$this->data['title'] = 'Registrera nytt konto';
 
 		// Custom validation error messages for registration
 		$this->form_validation->set_message('is_unique', $this->lang->line('form_is_unique'));
@@ -37,18 +38,16 @@ class User extends CI_Controller {
 
 		if ($this->form_validation->run() === FALSE)
 		{
-			$this->load->view('templates/header', $data);
-			$this->load->view('user/join');
-			$this->load->view('templates/footer');
+			$this->data['subview'] = 'user/join';
+			$this->load->view('layouts/default', $this->data);
 		}
 		else
 		{
 			// Validation passed, add user
 			$this->user_model->set_user();
 
-			$this->load->view('templates/header', $data);
-			$this->load->view('user/success');
-			$this->load->view('templates/footer');
+			$this->data['subview'] = 'user/success';
+			$this->load->view('layouts/default', $this->data);
 		}
 	}
 
@@ -68,11 +67,9 @@ class User extends CI_Controller {
 	// Route /home - view your personal page
 	public function home()
 	{
-		$data['title'] = 'Min profil';
-
-		$this->load->view('templates/header', $data);
-		$this->load->view('user/home');
-		$this->load->view('templates/footer');
+		$this->data['title'] = 'Min profil';
+		$this->data['subview'] = 'user/home';
+		$this->load->view('layouts/default', $this->data);
 	}
 
 	// Route /home/edit/ - edit your own profile
