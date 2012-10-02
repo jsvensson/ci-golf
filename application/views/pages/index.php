@@ -10,3 +10,9 @@
 	<li><?= anchor('join', 'Registrera konto') ?></li>
 	<li><?= anchor('user', 'Admin: Lista användare') ?></li>
 </ul>
+
+<?php
+
+$this->dbug->show($this->session->all_userdata());
+
+?>
