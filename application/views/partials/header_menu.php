@@ -11,6 +11,9 @@
 					<li><?= anchor('home', $this->lang->line('menu_item_home')) ?></li>
 					<li><?= anchor('news', $this->lang->line('menu_item_news')) ?></li>
 					<li><?= anchor('about', $this->lang->line('menu_item_information')) ?></li>
+<? if ($this->session->userdata('login_state') === TRUE): ?>
+					<li><?= anchor('user/logout', $this->lang->line('menu_item_logout')) ?></li>
+<? endif ?>
 				</ul>
 <?php
 
