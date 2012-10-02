@@ -54,7 +54,7 @@ class User extends CI_Controller {
 	// Route /user/logout - destroy user session
 	public function logout()
 	{
-		$this->session->unset_userdata('logged_in');
+		$this->session->sess_destroy();
 		redirect(base_url());
 	}
 
