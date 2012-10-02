@@ -13,11 +13,13 @@ class User extends CI_Controller {
 
 	public function index()
 	{
-		$this->data['subview'] = 'user/index';
-		$this->data['user'] = $this->user_model->get_user();
-		$this->data['title'] = 'Visar användare';
+		if ($this->requires_login()) {
+			$this->data['user'] = $this->user_model->get_user();
+			$this->data['title'] = 'Visar användare';
 
-		$this->load->view('layouts/default', $this->data);
+			$this->data['subview'] = 'user/index';
+			$this->load->view('layouts/default', $this->data);
+		}
 	}
 
 	// Route /join - form for registering a new account
@@ -77,7 +79,7 @@ class User extends CI_Controller {
 		}
 		else {
 			// wrong credentials, do stuff
-			$this->data['subview'] = 'user/login_error';
+			$this->data['subview'] = 'user/error_incorrect_login';
 			$this->load->view('layouts/default', $this->data);
 		}
 	}
@@ -85,27 +87,34 @@ class User extends CI_Controller {
 	// Route /home - view your personal page
 	public function home()
 	{
-		$this->data['title'] = 'Min profil';
-		$this->data['subview'] = 'user/home';
-		$this->load->view('layouts/default', $this->data);
+		if ($this->requires_login()) {
+			$this->data['title'] = 'Min profil';
+			$this->data['subview'] = 'user/home';
+			$this->load->view('layouts/default', $this->data);
+		}
 	}
 
 	private function requires_login()
 	{
 		$status = $this->session->userdata('login_state');
 
-		if ($status === FALSE) {
-			$this->data['subview'] = 'user/error_not_logged_in';
+		if ($status === TRUE) {
+			return TRUE;
+		}
+		else {
+			$this->data['subview'] = 'user/error_requires_login';
 			$this->load->view('layouts/default', $this->data);
 		}
-
 	}
 
 	private function requires_user_level($required_level)
 	{
 		$user_level = $this->session->userdata('user_level');
 
-		if ($user_level < $required_level) {
+		if ($user_level >= $required_level) {
+			return TRUE;
+		}
+		else {
 			$this->data['subview'] = 'user/error_low_level';
 			$this->load->view('layouts/default', $this->data);			
 		}
