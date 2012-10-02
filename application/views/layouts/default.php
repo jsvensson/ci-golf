@@ -20,6 +20,12 @@ $this->lang->load('form');
 
 <?php $this->load->view($this->data['subview'], $this->data) ?>
 
+<?php
+
+$this->dbug->show($this->session->all_userdata());
+
+?>
+
 	</div><!-- end .container -->
 
 
