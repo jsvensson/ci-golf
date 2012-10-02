@@ -8,7 +8,7 @@ class User_model extends CI_Model {
 		$this->load->helper('password');
 	}
 
-	public function get_user($user = FALSE)
+	public function get_user($user = FALSE, $type = FALSE)
 	{
 		$this->db->select("*, CONCAT_WS(' ', firstname, lastname) AS fullname", false);
 
@@ -17,12 +17,29 @@ class User_model extends CI_Model {
 			$query = $this->db->get('user');
 			return $query->result_array();
 		}
-		else
-		{
-			$this->db->where('username', $user);
+
+		// Get by id or email
+		if ($user && $type) {
+			if ($type === "email") {
+				$this->db->where('username', $user);
+			}
+			elseif ($type === "id") {
+				$this->db->where('id', $user);
+			}
 			$query = $this->db->get('user', 1);
-			return $query->row();
+			return $query->row();			
 		}
+	}
+
+	// Convenience wrappers for get_user()
+	public function get_user_by_id($id)
+	{
+		return $this->user_model->get_user($id, 'id');
+	}
+
+	public function get_user_by_email($email)
+	{
+		return $this->user_model->get_user($email, 'email');
 	}
 
 	public function set_user()

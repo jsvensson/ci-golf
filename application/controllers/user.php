@@ -65,7 +65,7 @@ class User extends CI_Controller {
 		$user = $this->security->xss_clean($this->input->post('username'));
 		$pw = $this->security->xss_clean($this->input->post('password'));
 
-		$row = $this->user_model->get_user($user);
+		$row = $this->user_model->get_user_by_email($user);
 
 		// Check password
 		if (check_salt($pw, $row->password) === TRUE) {
