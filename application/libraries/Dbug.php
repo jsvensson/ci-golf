@@ -60,8 +60,11 @@ class dBug {
 	var $bCollapsed = false;
 	var $arrHistory = array();
 	
+	// New empty constructor for CodeIgniter
+	function Dbug() { }
+
 	//constructor
-	function dBug($var,$forceType="",$bCollapsed=false) {
+	function show($var,$forceType="",$bCollapsed=false) {
 		//include js and css scripts
 		if(!defined('BDBUGINIT')) {
 			define("BDBUGINIT", TRUE);
