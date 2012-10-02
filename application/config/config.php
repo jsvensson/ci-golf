@@ -14,7 +14,9 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost:8888/golf/';
+//$config['base_url']	= 'http://10.0.1.102:8888/golf/';
+$config['base_url']	= '';
+
 
 /*
 |--------------------------------------------------------------------------
