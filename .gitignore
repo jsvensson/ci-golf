@@ -3,3 +3,4 @@
 */cache/*
 */cache/!index.html
 /application/helpers/password_helper.php
+/assets/images/
