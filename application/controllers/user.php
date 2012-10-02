@@ -65,17 +65,14 @@ class User extends CI_Controller {
 		$user = $this->security->xss_clean($this->input->post('username'));
 		$pw = $this->security->xss_clean($this->input->post('password'));
 
-		$this->db->where('username', $user);
-		$query = $this->db->get('user', 1);
-		$row = $query->row();
+		$row = $this->user_model->get_user($user);
 
 		// Check password
-		$is_salted = check_salt($pw, $row->password);
-
-		if ($is_salted === TRUE) {
+		if (check_salt($pw, $row->password) === TRUE) {
 			// Passwords match, proceed with login setup
 			$this->session->set_userdata('login_state', TRUE);
 			$this->session->set_userdata('user_level', $row->level);
+
 			redirect(base_url());
 		}
 		else {

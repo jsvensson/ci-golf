@@ -8,19 +8,20 @@ class User_model extends CI_Model {
 		$this->load->helper('password');
 	}
 
-	public function get_user($id = FALSE)
+	public function get_user($user = FALSE)
 	{
 		$this->db->select("*, CONCAT_WS(' ', firstname, lastname) AS fullname", false);
 
-		if ($id === FALSE)
+		if ($user === FALSE)
 		{
 			$query = $this->db->get('user');
 			return $query->result_array();
 		}
 		else
 		{
-			$query = $this->db->get_where('user', array('id' => $id));
-			return $query->row_array();
+			$this->db->where('username', $user);
+			$query = $this->db->get('user', 1);
+			return $query->row();
 		}
 	}
 
