@@ -9,8 +9,8 @@ $this->lang->load('form');
 <head>
 	<title><?= $title ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>css/default.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/default.css">
 </head>
 <body>
 
@@ -24,7 +24,7 @@ $this->lang->load('form');
 
 
 <!-- Load javascript -->
-    <script type="text/javascript" src="<?= base_url(); ?>js/jquery.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>assets/js/jquery.js"></script>
 
 </body>
 </html>
