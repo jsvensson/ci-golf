@@ -92,8 +92,25 @@ class User extends CI_Controller {
 
 	// Route /home/edit/ - edit your own profile
 	public function edit()
+	private function requires_login()
 	{
-		
+		$status = $this->session->userdata('login_state');
+
+		if ($status === FALSE) {
+			$this->data['subview'] = 'user/error_not_logged_in';
+			$this->load->view('layouts/default', $this->data);
+		}
+
+	}
+
+	private function requires_user_level($required_level)
+	{
+		$user_level = $this->session->userdata('user_level');
+
+		if ($user_level < $required_level) {
+			$this->data['subview'] = 'user/error_low_level';
+			$this->load->view('layouts/default', $this->data);			
+		}
 	}
 
 }
