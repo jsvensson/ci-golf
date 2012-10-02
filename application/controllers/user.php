@@ -2,7 +2,7 @@
 
 class User extends CI_Controller {
 
-	public $data = array('subview' => 'No subview given');
+	public $data = array('subview' => 'subview-missing');
 
 	public function __construct()
 	{
