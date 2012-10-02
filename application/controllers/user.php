@@ -90,8 +90,6 @@ class User extends CI_Controller {
 		$this->load->view('layouts/default', $this->data);
 	}
 
-	// Route /home/edit/ - edit your own profile
-	public function edit()
 	private function requires_login()
 	{
 		$status = $this->session->userdata('login_state');
