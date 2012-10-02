@@ -13,8 +13,13 @@
 					<li><?= anchor('about', $this->lang->line('menu_item_information')) ?></li>
 				</ul>
 <?php
-// FIXME: load different partials if logged in
-$this->load->view('partials/header_menu_loginform');
+
+if ($this->session->userdata('login_state') === TRUE) {
+	$this->load->view('partials/header_menu_signedin');
+}
+else {
+	$this->load->view('partials/header_menu_loginform');
+};
 
 ?>
 

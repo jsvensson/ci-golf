@@ -62,7 +62,27 @@ class User extends CI_Controller {
 	// Route /user/login - create user session
 	public function login()
 	{
+		$user = $this->security->xss_clean($this->input->post('username'));
+		$pw = $this->security->xss_clean($this->input->post('password'));
 
+		$this->db->where('username', $user);
+		$query = $this->db->get('user', 1);
+		$row = $query->row();
+
+		// Check password
+		$is_salted = check_salt($pw, $row->password);
+
+		if ($is_salted === TRUE) {
+			// Passwords match, proceed with login setup
+			$this->session->set_userdata('login_state', TRUE);
+			$this->session->set_userdata('user_level', $row->level);
+			redirect(base_url());
+		}
+		else {
+			// wrong credentials, do stuff
+			$this->data['subview'] = 'user/login_error';
+			$this->load->view('layouts/default', $this->data);
+		}
 	}
 
 	// Route /home - view your personal page
