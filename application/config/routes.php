@@ -57,13 +57,13 @@
 
 	// User registration
 	$route['join']        = 'user/join';
-	
+
 	// Log in/out
 	$route['user/login']  = 'user/login';
 	$route['user/logout'] = 'user/logout';
 
 	// Admin views
-	$route['user/(:any)'] = 'user/$1'; 
+	$route['user/(:any)'] = 'user/$1';
 	$route['user']        = 'user/index';
 
 ////////////////////////////////////////////////////

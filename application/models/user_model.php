@@ -27,7 +27,7 @@ class User_model extends CI_Model {
 				$this->db->where('id', $user);
 			}
 			$query = $this->db->get('user', 1);
-			return $query->row();			
+			return $query->row();
 		}
 	}
 
