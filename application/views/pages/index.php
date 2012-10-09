@@ -7,6 +7,9 @@
 <h3>Tillfälliga länkar</h3>
 
 <ul>
-	<li><?= anchor('join', 'Registrera konto') ?></li>
 	<li><?= anchor('user', 'Admin: Lista användare') ?></li>
 </ul>
+
+<?php
+
+$this->dbug->inspect($this->session->all_userdata());
