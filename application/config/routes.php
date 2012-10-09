@@ -51,9 +51,10 @@
 ////////////////////////////////////////////////////
 // User controller
 
-	// Personal page
+	// Personal pages
 	$route['home']        = 'user/home';
-	
+	$route['home/settings'] = 'user/settings';
+
 	// User registration
 	$route['join']        = 'user/join';
 	
