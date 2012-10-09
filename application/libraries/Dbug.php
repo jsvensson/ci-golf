@@ -64,7 +64,7 @@ class dBug {
 	function Dbug() { }
 
 	//constructor
-	function show($var,$forceType="",$bCollapsed=false) {
+	function inspect($var,$forceType="",$bCollapsed=false) {
 		//include js and css scripts
 		if(!defined('BDBUGINIT')) {
 			define("BDBUGINIT", TRUE);
