@@ -72,6 +72,7 @@ class User extends CI_Controller
 		// Check password
 		if (check_salt($pw, $row->password) === TRUE) {
 			// Passwords match, proceed with login setup
+			$this->session->set_userdata('user_id', $row->id);
 			$this->session->set_userdata('login_state', TRUE);
 			$this->session->set_userdata('user_level', $row->level);
 
@@ -92,6 +93,20 @@ class User extends CI_Controller
 			$this->data['subview'] = 'user/home';
 			$this->load->view('layouts/default', $this->data);
 		}
+	}
+
+	// Route /home/settings - view account settings
+	public function settings()
+	{
+		$this->load->library('form_validation');
+		$this->lang->load('form');
+		$this->data['title'] = 'Inställningar';
+
+		$user_id = $this->session->userdata('user_id');
+		$this->data['user'] = $this->user_model->get_user_by_id($user_id);
+
+		$this->data['subview'] = 'user/settings';
+		$this->load->view('layouts/default', $this->data);
 	}
 
 	private function requires_login()
