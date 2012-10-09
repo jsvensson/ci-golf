@@ -131,7 +131,7 @@ class User extends CI_Controller
 		}
 		else {
 			$this->data['subview'] = 'user/error_low_level';
-			$this->load->view('layouts/default', $this->data);			
+			$this->load->view('layouts/default', $this->data);
 		}
 	}
 
