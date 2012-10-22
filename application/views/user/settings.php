@@ -1,5 +1,9 @@
 <h2>Inställningar</h2>
 
+<?php if ($this->session->flashdata('flash')): ?>
+	<div class="alert alert-<?= $this->session->flashdata('flash_type') ?>"><?= $this->session->flashdata('flash_message') ?></div>
+<?php endif; ?>
+
 <?= form_open('user/settings') ?>
 
 <label for="username"><?= $this->lang->line('form_label_email') ?></label>
