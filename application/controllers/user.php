@@ -41,6 +41,7 @@ class User extends CI_Controller
 
 		if ($this->form_validation->run() === FALSE)
 		{
+			// Validation failed
 			$this->data['subview'] = 'user/join';
 			$this->load->view('layouts/default', $this->data);
 		}
