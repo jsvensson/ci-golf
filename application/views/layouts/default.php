@@ -20,14 +20,7 @@ $this->lang->load('form');
 
 <?php $this->load->view($this->data['subview'], $this->data) ?>
 
-<?php
-
-$this->dbug->show($this->session->all_userdata());
-
-?>
-
 	</div><!-- end .container -->
-
 
 <!-- Load javascript -->
     <script type="text/javascript" src="<?= base_url(); ?>assets/js/jquery.js"></script>
