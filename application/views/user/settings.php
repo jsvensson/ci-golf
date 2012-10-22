@@ -32,4 +32,6 @@
 
 <?= form_close() ?>
 
+<?php $this->dbug->inspect($_POST); ?>
+
 <?php $this->dbug->inspect($this->data['user']); ?>
