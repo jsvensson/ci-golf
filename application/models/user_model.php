@@ -42,7 +42,7 @@ class User_model extends CI_Model {
 		return $this->user_model->get_user($email, 'email');
 	}
 
-	public function set_user()
+	public function set_user($id = NULL)
 	{
 
 		// Salt and encrypt password (SHA1)
@@ -56,7 +56,13 @@ class User_model extends CI_Model {
 			'password'  => $salted_pw,
 		);
 
-		return $this->db->insert('user', $data);
+		if ($id) {
+			$this->db->where('id', $id);
+			return $this->db->update('user', $data);
+		}
+		else {
+			return $this->db->insert('user', $data);
+		}
 	}
 }
 
