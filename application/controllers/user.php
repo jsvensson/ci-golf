@@ -105,8 +105,37 @@ class User extends CI_Controller
 		$user_id = $this->session->userdata('user_id');
 		$this->data['user'] = $this->user_model->get_user_by_id($user_id);
 
-		$this->data['subview'] = 'user/settings';
-		$this->load->view('layouts/default', $this->data);
+		// FIXME: validation rules for user settings
+		$this->form_validation->set_rules('username', 'lang:form_name_username', 'trim|required|valid_email');
+		// $this->form_validation->set_rules('password', 'lang:form_name_password', 'required|min_length[6]|matches[verify_password]');
+		// $this->form_validation->set_rules('verify_password', 'lang:form_name_verify_password', 'required');
+
+		$this->form_validation->set_error_delimiters('<div class="alert alert-error">', '</div>');
+
+		// FIXME: redundancies
+		if ($this->form_validation->run() === FALSE) {
+			// Validation failed
+			$this->session->set_flashdata('flash', TRUE);
+			$this->session->set_flashdata('flash_type', 'error');
+			$this->session->set_flashdata('flash_message', 'Nånting gick snett.');
+
+			$this->data['subview'] = 'user/settings';
+			$this->load->view('layouts/default', $this->data);
+		}
+		else {
+			// Validation passed, update settings
+			$user_id = $this->session->userdata('user_id');
+			$this->user_model->set_user($user_id);
+
+			$this->data['user'] = $this->user_model->get_user_by_id($user_id);
+
+			$this->session->set_flashdata('flash', TRUE);
+			$this->session->set_flashdata('flash_type', 'success');
+			$this->session->set_flashdata('flash_message', 'Inställningar sparade!');
+
+			$this->data['subview'] = 'user/settings';
+			$this->load->view('layouts/default', $this->data);
+		}
 	}
 
 	private function requires_login()
