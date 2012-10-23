@@ -39,14 +39,12 @@ class User extends CI_Controller
 		$this->form_validation->set_rules('password', 'lang:form_name_password', 'required|min_length[6]|matches[verify_password]');
 		$this->form_validation->set_rules('verify_password', 'lang:form_name_verify_password', 'required');
 
-		if ($this->form_validation->run() === FALSE)
-		{
+		if ($this->form_validation->run() === FALSE) {
 			// Validation failed
 			$this->data['subview'] = 'user/join';
 			$this->load->view('layouts/default', $this->data);
 		}
-		else
-		{
+		else {
 			// Validation passed, add user
 			$this->user_model->set_user();
 
