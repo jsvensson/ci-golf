@@ -1,7 +1,7 @@
 <h2>Inställningar</h2>
 
-<?php if ($this->session->flashdata('flash')): ?>
-	<div class="alert alert-<?= $this->session->flashdata('flash_type') ?>"><?= $this->session->flashdata('flash_message') ?></div>
+<?php if (isset($this->data['message'])): ?>
+	<div class="alert alert-<?= $this->data['message']['type'] ?>"><?= $this->data['message']['text'] ?></div>
 <?php endif; ?>
 
 <?= form_open('user/settings') ?>
@@ -24,7 +24,7 @@
 
 <label for="password"><?= $this->lang->line('form_label_password_repeat') ?></label>
 <?= form_error('verify_password'); ?>
-<input type="password" name="verify_password" placeholder="<?= $this->lang->line('form_placeholder_password') ?>" value="<?= set_value('verify_password'); ?>">
+<input type="password" name="verify_password" placeholder="<?= $this->lang->line('form_placeholder_password') ?>" value="">
 
 <br>
 
