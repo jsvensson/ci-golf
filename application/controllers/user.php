@@ -106,8 +106,8 @@ class User extends CI_Controller
 
 		// FIXME: validation rules for user settings
 		$this->form_validation->set_rules('username', 'lang:form_name_username', 'trim|required|valid_email');
-		// $this->form_validation->set_rules('password', 'lang:form_name_password', 'required|min_length[6]|matches[verify_password]');
-		// $this->form_validation->set_rules('verify_password', 'lang:form_name_verify_password', 'required');
+		$this->form_validation->set_rules('password', 'lang:form_name_password', 'required|min_length[6]|matches[verify_password]');
+		$this->form_validation->set_rules('verify_password', 'lang:form_name_verify_password', 'required');
 
 		$this->form_validation->set_error_delimiters('<div class="alert alert-error">', '</div>');
 
