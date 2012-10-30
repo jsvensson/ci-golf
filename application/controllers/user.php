@@ -99,7 +99,7 @@ class User extends MY_Controller
 			$this->lang->load('form');
 			$this->data['title'] = 'Inställningar';
 
-			$user_id = $this->session->userdata('user_id');
+			$user_id = $this->data['user_id'];
 			$this->data['user'] = $this->user_model->get_user_by_id($user_id);
 
 			// FIXME: validation rules for user settings
@@ -111,7 +111,6 @@ class User extends MY_Controller
 
 			if ($this->form_validation->run() === TRUE) {
 				// Validation passed, update settings
-				$user_id = $this->session->userdata('user_id');
 				$this->user_model->set_user($user_id);
 
 				$this->data['user'] = $this->user_model->get_user_by_id($user_id);
