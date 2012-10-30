@@ -42,15 +42,13 @@ class User extends CI_Controller
 		if ($this->form_validation->run() === FALSE) {
 			// Validation failed
 			$this->data['subview'] = 'user/join';
-			$this->load->view('layouts/default', $this->data);
 		}
 		else {
 			// Validation passed, add user
 			$this->user_model->set_user();
-
 			$this->data['subview'] = 'user/success';
-			$this->load->view('layouts/default', $this->data);
 		}
+			$this->load->view('layouts/default', $this->data);
 	}
 
 	// Route /user/logout - destroy user session
