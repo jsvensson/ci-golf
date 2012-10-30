@@ -87,7 +87,7 @@ class User extends CI_Controller
 	// Route /home - view your personal page
 	public function home()
 	{
-		if ($this->user_requires_login()) {
+		if ($this->user_is_logged_in()) {
 			$this->data['title'] = 'Min profil';
 			$this->data['subview'] = 'user/home';
 			$this->load->view('layouts/default', $this->data);
@@ -135,7 +135,7 @@ class User extends CI_Controller
 		$this->load->view('layouts/default', $this->data);
 	}
 
-	private function user_requires_login()
+	private function user_is_logged_in()
 	{
 		$status = $this->session->userdata('login_state');
 
