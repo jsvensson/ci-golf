@@ -113,6 +113,7 @@ class User extends MY_Controller
 				// Validation passed, update settings
 				$this->user_model->set_user($user_id);
 
+				// Get updated user data to repopulate form
 				$this->data['user'] = $this->user_model->get_user_by_id($user_id);
 
 				// $this->session->set_flashdata('flash', TRUE);
