@@ -110,12 +110,7 @@ class User extends CI_Controller
 
 			$this->form_validation->set_error_delimiters('<div class="alert alert-error">', '</div>');
 
-			// FIXME: redundancies
-			if ($this->form_validation->run() === FALSE) {
-				// Validation failed
-
-			}
-			else {
+			if ($this->form_validation->run() === TRUE) {
 				// Validation passed, update settings
 				$user_id = $this->session->userdata('user_id');
 				$this->user_model->set_user($user_id);
