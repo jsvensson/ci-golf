@@ -1,7 +1,7 @@
 <?php
 
 $config = array(
-	'user_signup' => array(
+	'user/join' => array(
 		array(
 			'field' => 'username',
 			'label' => 'lang:form_name_username',
@@ -18,7 +18,7 @@ $config = array(
 			'rules' => 'required'
 		)
 	),
-	'user_settings' => array(
+	'user/settings' => array(
 		array(
 			'field' => 'username',
 			'label' => 'lang:form_name_username',

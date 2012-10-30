@@ -31,7 +31,7 @@ class User extends MY_Controller
 		$this->form_validation->set_message('is_unique', $this->lang->line('form_is_unique'));
 		$this->form_validation->set_message('matches', $this->lang->line('form_password_matches'));
 
-		if ($this->form_validation->run('user_signup') === FALSE) {
+		if ($this->form_validation->run() === FALSE) {
 			// Validation failed
 			$this->data['subview'] = 'user/join';
 		}
@@ -97,7 +97,7 @@ class User extends MY_Controller
 
 			$this->form_validation->set_error_delimiters('<div class="alert alert-error">', '</div>');
 
-			if ($this->form_validation->run('user_settings') === TRUE) {
+			if ($this->form_validation->run() === TRUE) {
 				// Validation passed, update settings
 				$this->user_model->set_user($user_id);
 
