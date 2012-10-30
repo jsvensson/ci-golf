@@ -38,7 +38,7 @@ class User extends MY_Controller
 		$this->form_validation->set_rules('password', 'lang:form_name_password', 'required|min_length[6]|matches[verify_password]');
 		$this->form_validation->set_rules('verify_password', 'lang:form_name_verify_password', 'required');
 
-		if ($this->form_validation->run() === FALSE) {
+		if ($this->form_validation->run('user_signup') === FALSE) {
 			// Validation failed
 			$this->data['subview'] = 'user/join';
 		}
@@ -109,7 +109,7 @@ class User extends MY_Controller
 
 			$this->form_validation->set_error_delimiters('<div class="alert alert-error">', '</div>');
 
-			if ($this->form_validation->run() === TRUE) {
+			if ($this->form_validation->run('user_settings') === TRUE) {
 				// Validation passed, update settings
 				$this->user_model->set_user($user_id);
 

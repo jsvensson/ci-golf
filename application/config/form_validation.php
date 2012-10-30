@@ -1,7 +1,7 @@
 <?php
 
 $config = array(
-	'signup' => array(
+	'user_signup' => array(
 		array(
 			'field' => 'username',
 			'label' => 'lang:form_name_username',
