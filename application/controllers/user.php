@@ -1,6 +1,6 @@
 <?php
 
-class User extends CI_Controller
+class User extends MY_Controller
 {
 	public $data = array('subview' => 'subview-missing');
 
@@ -8,7 +8,6 @@ class User extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('user_model');
-		$this->data['login_state'] = $this->session->userdata('login_state');
 	}
 
 	public function index()
