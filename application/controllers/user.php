@@ -10,12 +10,12 @@ class User extends MY_Controller
 		$this->load->model('user_model');
 	}
 
+	// Route /user - shows all users
 	public function index()
 	{
 		if ($this->requires_login()) {
 			$this->data['user'] = $this->user_model->get_user();
 			$this->data['title'] = 'Visar användare';
-
 			$this->data['subview'] = 'user/index';
 			$this->load->view('layouts/default', $this->data);
 		}
@@ -27,16 +27,9 @@ class User extends MY_Controller
 		$this->load->library('form_validation');
 		$this->lang->load('form');
 
-		$this->data['title'] = 'Registrera nytt konto';
-
 		// Custom validation error messages for registration
 		$this->form_validation->set_message('is_unique', $this->lang->line('form_is_unique'));
 		$this->form_validation->set_message('matches', $this->lang->line('form_password_matches'));
-
-		// Form validation
-		$this->form_validation->set_rules('username', 'lang:form_name_username', 'trim|required|is_unique[user.username]|valid_email');
-		$this->form_validation->set_rules('password', 'lang:form_name_password', 'required|min_length[6]|matches[verify_password]');
-		$this->form_validation->set_rules('verify_password', 'lang:form_name_verify_password', 'required');
 
 		if ($this->form_validation->run('user_signup') === FALSE) {
 			// Validation failed
@@ -47,7 +40,8 @@ class User extends MY_Controller
 			$this->user_model->set_user();
 			$this->data['subview'] = 'user/success';
 		}
-			$this->load->view('layouts/default', $this->data);
+		$this->data['title'] = 'Registrera nytt konto';
+		$this->load->view('layouts/default', $this->data);
 	}
 
 	// Route /user/logout - destroy user session
@@ -97,15 +91,9 @@ class User extends MY_Controller
 		if ($this->user_is_logged_in()) {
 			$this->load->library('form_validation');
 			$this->lang->load('form');
-			$this->data['title'] = 'Inställningar';
 
 			$user_id = $this->data['user_id'];
 			$this->data['user'] = $this->user_model->get_user_by_id($user_id);
-
-			// FIXME: validation rules for user settings
-			$this->form_validation->set_rules('username', 'lang:form_name_username', 'trim|required|valid_email');
-			$this->form_validation->set_rules('password', 'lang:form_name_password', 'required|min_length[6]|matches[verify_password]');
-			$this->form_validation->set_rules('verify_password', 'lang:form_name_verify_password', 'required');
 
 			$this->form_validation->set_error_delimiters('<div class="alert alert-error">', '</div>');
 
@@ -115,15 +103,10 @@ class User extends MY_Controller
 
 				// Get updated user data to repopulate form
 				$this->data['user'] = $this->user_model->get_user_by_id($user_id);
-
-				// $this->session->set_flashdata('flash', TRUE);
-				// $this->session->set_flashdata('flash_type', 'success');
-				// $this->session->set_flashdata('flash_message', 'Inställningar sparade!');
-
 				$this->data['message']['type'] = "success";
 				$this->data['message']['text'] = "Inställningar sparade";
-
 			}
+			$this->data['title'] = 'Inställningar';
 			$this->data['subview'] = 'user/settings';
 			$this->load->view('layouts/default', $this->data);
 		}
