@@ -9,7 +9,3 @@
 <ul>
 	<li><?= anchor('user', 'Admin: Lista användare') ?></li>
 </ul>
-
-<?php
-
-$this->dbug->inspect($this->session->all_userdata());
