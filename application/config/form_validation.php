@@ -1,6 +1,7 @@
 <?php
 
 $config = array(
+	// user/join, form rules for new user registration
 	'user/join' => array(
 		array(
 			'field' => 'username',
@@ -18,6 +19,7 @@ $config = array(
 			'rules' => 'required'
 		)
 	),
+	// user/settings, form rules for modifying user settings
 	'user/settings' => array(
 		array(
 			'field' => 'username',
