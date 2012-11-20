@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Pages extends MY_Controller {
 
@@ -20,5 +20,6 @@ class Pages extends MY_Controller {
 		$this->data['title'] = $titles[$page];
 		$this->load->view('layouts/default', $this->data);
 	}
+
 }
 ?>

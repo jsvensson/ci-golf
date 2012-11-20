@@ -2,6 +2,7 @@
 
 class MY_Controller extends CI_Controller
 {
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -12,6 +13,7 @@ class MY_Controller extends CI_Controller
 		$this->data['login_state'] = $this->session->userdata('login_state');
 		$this->data['active_nav_tab'] = NULL;
 	}
+
 }
 
 /* EOF */
