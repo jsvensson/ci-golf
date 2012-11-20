@@ -1,14 +1,16 @@
 	<h3>Användare</h3>
 
 
-	<table>
-		<tr>
-			<th>ID</th>
-			<th>Namn</th>
-			<th>Email</th>
-			<th>Status</th>
-			<th>Nivå</th>
-		</tr>
+	<table class="table table-condensed table-hover">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Namn</th>
+				<th>Email</th>
+				<th>Status</th>
+				<th>Nivå</th>
+			</tr>
+	</thead>
 <?php foreach ($user as $user_item): ?>
 		<tr>
 			<td><?= $user_item['id'] ?></td>
