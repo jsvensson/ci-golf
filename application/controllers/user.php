@@ -79,6 +79,7 @@ class User extends MY_Controller
 		if ($this->user_is_logged_in()) {
 			$this->get_current_user();
 
+			$this->data['active_nav_tab'] = 'home';
 			$this->data['title'] = 'Min profil';
 			$this->data['subview'] = 'user/home';
 			$this->load->view('layouts/default', $this->data);

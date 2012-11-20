@@ -16,6 +16,13 @@ class Pages extends MY_Controller {
 			'about' => 'Golf - Information'
 		);
 
+		// FIXME: another ugly hack for static page active nav tabs
+		$nav = array(
+			'index' => NULL,
+			'about' => 'about'
+		);
+
+		$this->data['active_nav_tab'] = $nav[$page];
 		$this->data['subview'] = 'pages/' . $page;
 		$this->data['title'] = $titles[$page];
 		$this->load->view('layouts/default', $this->data);

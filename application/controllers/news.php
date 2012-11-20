@@ -10,6 +10,7 @@ class News extends MY_Controller {
 
 	public function index()
 	{
+		$this->data['active_nav_tab'] = 'news';
 		$this->data['subview'] = 'news/index';
 		$this->data['news'] = $this->news_model->get_news();
 		$this->data['title'] = 'Nyheter';

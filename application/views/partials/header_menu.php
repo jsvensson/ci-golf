@@ -8,11 +8,11 @@
 				</a>
 				<a class="brand" href="<?= base_url(); ?>"><?= $this->lang->line('menu_item_brand') ?></a>
 				<ul class="nav">
-<? if ($this->session->userdata('login_state') === TRUE): ?>
-					<li><?= anchor('home', $this->lang->line('menu_item_home')) ?></li>
+<? if ($this->session->userdata('login_state') === TRUE): // FIXME: break active tab logic out into helper ?>
+					<li<?= $this->data['active_nav_tab'] == 'home' ? ' class="active"' : NULL ?>><?= anchor('home', $this->lang->line('menu_item_home')) ?></li>
 <? endif ?>
-					<li><?= anchor('news', $this->lang->line('menu_item_news')) ?></li>
-					<li><?= anchor('about', $this->lang->line('menu_item_information')) ?></li>
+					<li<?= $this->data['active_nav_tab'] == 'news' ? ' class="active"' : NULL ?>><?= anchor('news', $this->lang->line('menu_item_news')) ?></li>
+					<li<?= $this->data['active_nav_tab'] == 'about' ? ' class="active"' : NULL ?>><?= anchor('about', $this->lang->line('menu_item_information')) ?></li>
 				</ul>
 <?php
 
