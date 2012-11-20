@@ -1,8 +1,6 @@
 <?php
 
-class News extends CI_Controller {
-
-	public $data = array('subview' => 'No subview given');
+class News extends MY_Controller {
 
 	public function __construct()
 	{

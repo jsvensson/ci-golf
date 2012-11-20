@@ -2,8 +2,6 @@
 
 class User extends MY_Controller
 {
-	public $data = array('subview' => 'subview-missing');
-
 	public function __construct()
 	{
 		parent::__construct();

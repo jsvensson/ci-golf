@@ -1,8 +1,6 @@
 <?php 
 
-class Pages extends CI_Controller {
-
-	public $data = array('subview' => 'Subview not set');
+class Pages extends MY_Controller {
 
 	public function view($page = 'home')
 	{
