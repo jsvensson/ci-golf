@@ -79,6 +79,8 @@ class User extends MY_Controller
 	public function home()
 	{
 		if ($this->user_is_logged_in()) {
+			$this->get_current_user();
+
 			$this->data['title'] = 'Min profil';
 			$this->data['subview'] = 'user/home';
 			$this->load->view('layouts/default', $this->data);
@@ -91,9 +93,7 @@ class User extends MY_Controller
 		if ($this->user_is_logged_in()) {
 			$this->load->library('form_validation');
 			$this->lang->load('form');
-
-			$user_id = $this->data['user_id'];
-			$this->data['user'] = $this->user_model->get_user_by_id($user_id);
+			$this->get_current_user();
 
 			$this->form_validation->set_error_delimiters('<div class="alert alert-error">', '</div>');
 
@@ -136,6 +136,11 @@ class User extends MY_Controller
 			$this->data['subview'] = 'user/error_low_level';
 			$this->load->view('layouts/default', $this->data);
 		}
+	}
+
+	private function get_current_user()
+	{
+			$this->data['user'] = $this->user_model->get_user_by_id($this->data['user_id']);
 	}
 
 }
