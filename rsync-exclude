@@ -1,0 +1,8 @@
+.DS_Store
+.git
+.gitignore
+documentation/
+rsync-exclude
+*.sublime-*
+user_guide/
+Rakefile
