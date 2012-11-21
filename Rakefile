@@ -8,7 +8,7 @@ deploy_branch  = :release  # :deploy will only run if in this branch
 
 desc "Deploy with rsync"
 task :deploy do
-	abort("## Not in #{deploy_branch} branch!") if !in_branch?(deploy_branch)
+	abort("## Not in #{deploy_branch} branch!") unless in_branch?(deploy_branch)
   exclude = ""
   if File.exists?('./rsync-exclude')
     exclude = "--exclude-from '#{File.expand_path('./rsync-exclude')}'"
