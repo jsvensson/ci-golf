@@ -13,6 +13,8 @@ class User extends MY_Controller
 	public function index()
 	{
 		if ($this->user_credentials->is_logged_in()) {
+			$this->lang->load('status');
+
 			$this->data['userlist'] = $this->user_model->get_user();
 			$this->data['title'] = 'Visar användare';
 			$this->data['subview'] = 'user/index';
