@@ -11,13 +11,13 @@
 				<th>Nivå</th>
 			</tr>
 	</thead>
-<?php foreach ($user as $user_item): ?>
+<?php foreach ($userlist as $user): ?>
 		<tr>
-			<td><?= $user_item['id'] ?></td>
-			<td><?= $user_item['fullname'] ?></td>
-			<td><?= $user_item['username'] ?></td>
-			<td><?= $user_item['status'] ?></td>
-			<td><?= $user_item['level'] ?></td>
+			<td><?= $user['id'] ?></td>
+			<td><?= $user['fullname'] ?></td>
+			<td><?= $user['username'] ?></td>
+			<td><?= $user['status'] ?></td>
+			<td><?= $user['level'] ?></td>
 		</tr>
 <?php endforeach ?>
 	</table>
