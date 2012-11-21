@@ -14,7 +14,7 @@
 <?php foreach ($userlist as $user): ?>
 		<tr>
 			<td><?= $user['id'] ?></td>
-			<td><?= $user['fullname'] ?></td>
+			<td><a href="<?= base_url() . 'admin/user/' . $user['id'] ?>"><?= $user['fullname'] ?></a></td>
 			<td><?= $user['username'] ?></td>
 			<td><?= $user['status'] ?></td>
 			<td><?= $user['level'] ?></td>
