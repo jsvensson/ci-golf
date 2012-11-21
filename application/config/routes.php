@@ -55,6 +55,9 @@
 	$route['home']        = 'user/home';
 	$route['home/settings'] = 'user/settings';
 
+	// View user page
+	$route['user/(:num)'] = "user/view/$1";
+
 	// User registration
 	$route['join']        = 'user/join';
 
@@ -63,8 +66,7 @@
 	$route['user/logout'] = 'user/logout';
 
 	// Admin views
-	$route['user/(:any)'] = 'user/$1';
-	$route['user']        = 'user/index';
+	$route['admin/list/users'] = 'user/index';
 
 ////////////////////////////////////////////////////
 // Static routes
