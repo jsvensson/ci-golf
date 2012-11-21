@@ -6,12 +6,13 @@ class User extends MY_Controller
 	{
 		parent::__construct();
 		$this->load->model('user_model');
+		$this->load->library('user_credentials');
 	}
 
 	// Route /user - shows all users
 	public function index()
 	{
-		if ($this->user_is_logged_in()) {
+		if ($this->user_credentials->is_logged_in()) {
 			$this->data['userlist'] = $this->user_model->get_user();
 			$this->data['title'] = 'Visar användare';
 			$this->data['subview'] = 'user/index';
@@ -88,7 +89,7 @@ class User extends MY_Controller
 	// Route /home - view your personal page
 	public function home()
 	{
-		if ($this->user_is_logged_in()) {
+		if ($this->user_credentials->is_logged_in()) {
 			$this->get_current_user();
 
 			$this->data['active_nav_tab'] = 'home';
@@ -101,7 +102,7 @@ class User extends MY_Controller
 	// Route /home/settings - view account settings
 	public function settings()
 	{
-		if ($this->user_is_logged_in()) {
+		if ($this->user_credentials->is_logged_in()) {
 			$this->load->library('form_validation');
 			$this->lang->load('form');
 			$this->get_current_user();
@@ -119,32 +120,6 @@ class User extends MY_Controller
 			}
 			$this->data['title'] = 'Inställningar';
 			$this->data['subview'] = 'user/settings';
-			$this->load->view('layouts/default', $this->data);
-		}
-	}
-
-	private function user_is_logged_in()
-	{
-		$status = $this->session->userdata('login_state');
-
-		if ($status === TRUE) {
-			return TRUE;
-		}
-		else {
-			$this->data['subview'] = 'user/error_requires_login';
-			$this->load->view('layouts/default', $this->data);
-		}
-	}
-
-	private function user_requires_level($required_level)
-	{
-		$user_level = $this->session->userdata('user_level');
-
-		if ($user_level >= $required_level) {
-			return TRUE;
-		}
-		else {
-			$this->data['subview'] = 'user/error_low_level';
 			$this->load->view('layouts/default', $this->data);
 		}
 	}
