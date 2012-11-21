@@ -16,4 +16,4 @@ $lang['menu_item_users']       = 'Användare';
 $lang['menu_item_settings']    = 'Inställningar';
 $lang['menu_item_logout']      = 'Logga ut';
 
-?>
+/* EOF */

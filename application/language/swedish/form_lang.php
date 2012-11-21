@@ -25,5 +25,4 @@ $lang['form_register_button']       = 'Registrera konto';
 // Login button
 $lang['form_login_button']          = 'Logga in';
 
-
-?>
+/* EOF */
