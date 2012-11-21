@@ -19,12 +19,13 @@ Allting under `/home` ska kräva inloggning; ska annars ge felmeddelande och lä
 
 #### /user
 
-* `user/(:num)/(:any)` -- vy för ett givet användarkonto. Controller `user/view/$1`.
+* `user/(:num)` -- vy för ett givet användarkonto. Controller `user/view/$1`.
 * `user/login` -- formulärhantering för inloggning; ingen vy. Controller `user/login`.
 * `user/logout` -- formulärhantering för utloggning; ingen vy. Controller `user/logout`.
 
-#### /account
+#### /admin
 
-* `account/(:num)` administrativ vy för ett givet konto. Controller `user/admin/$1`.
+* `admin/list/users` administrativ vy, listar alla användare. Controller `user/index`.
+* `admin/user/(:num)` administrativ vy för ett givet konto. Controller `user/$1`.
 
 ## News
