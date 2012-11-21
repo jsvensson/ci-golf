@@ -7,5 +7,5 @@
 <h3>Tillfälliga länkar</h3>
 
 <ul>
-	<li><?= anchor('user', 'Admin: Lista användare') ?></li>
+	<li><?= anchor('admin/list/users', 'Admin: Lista användare') ?></li>
 </ul>
