@@ -12,7 +12,7 @@ class User extends MY_Controller
 	// Route /user - shows all users
 	public function index()
 	{
-		if ($this->user_credentials->logged_in()) {
+		if ($this->user_credentials->is_logged_in()) {
 			$this->data['userlist'] = $this->user_model->get_user();
 			$this->data['title'] = 'Visar användare';
 			$this->data['subview'] = 'user/index';
