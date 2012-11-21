@@ -19,6 +19,18 @@ class User extends MY_Controller
 		}
 	}
 
+	// Route /user/view/$1 - show specific user
+	public function view($view_user_id = NULL)
+	{
+			if ($view_user_id === NULL) {
+				redirect(base_url());
+			};
+			$this->data['user'] = $this->user_model->get_user_by_id($view_user_id);
+			$this->data['title'] = 'Användare ' . $view_user_id;
+			$this->data['subview'] = 'user/view';
+			$this->load->view('layouts/default', $this->data);
+	}
+
 	// Route /join - form for registering a new account
 	public function join()
 	{
