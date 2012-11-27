@@ -73,15 +73,15 @@ class User extends MY_Controller
 		$row = $this->user_model->get_user_by_email($user);
 
 		// User active?
-		$is_active = ($row->status == 1) ? TRUE : FALSE;
+		$is_active = ($row->status == 1);
 
 		// Check credentials
-		if ($is_active === FALSE) {
+		if (!$is_active) {
 			// User account disabled
 			$this->data['subview'] = 'user/error_login_disabled';
 			$this->load->view('layouts/default', $this->data);
 		}
-		elseif ($is_active === TRUE && check_salt($pw, $row->password) === TRUE) {
+		elseif ($is_active && check_salt($pw, $row->password) === TRUE) {
 			// Passwords match, proceed with login setup
 			$this->session->set_userdata('user_id', $row->id);
 			$this->session->set_userdata('login_state', TRUE);
