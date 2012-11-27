@@ -13,6 +13,8 @@ class User extends MY_Controller
 	public function index()
 	{
 		if ($this->user_credentials->is_logged_in()) {
+			$this->lang->load('status');
+
 			$this->data['userlist'] = $this->user_model->get_user();
 			$this->data['title'] = 'Visar användare';
 			$this->data['subview'] = 'user/index';
@@ -70,8 +72,16 @@ class User extends MY_Controller
 
 		$row = $this->user_model->get_user_by_email($user);
 
-		// Check password
-		if (check_salt($pw, $row->password) === TRUE) {
+		// User active?
+		$is_active = ($row->status == 1) ? TRUE : FALSE;
+
+		// Check credentials
+		if ($is_active === FALSE) {
+			// User account disabled
+			$this->data['subview'] = 'user/error_login_disabled';
+			$this->load->view('layouts/default', $this->data);
+		}
+		elseif ($is_active === TRUE && check_salt($pw, $row->password) === TRUE) {
 			// Passwords match, proceed with login setup
 			$this->session->set_userdata('user_id', $row->id);
 			$this->session->set_userdata('login_state', TRUE);
@@ -81,7 +91,7 @@ class User extends MY_Controller
 		}
 		else {
 			// wrong credentials, do stuff
-			$this->data['subview'] = 'user/error_incorrect_login';
+			$this->data['subview'] = 'user/error_login_incorrect';
 			$this->load->view('layouts/default', $this->data);
 		}
 	}
