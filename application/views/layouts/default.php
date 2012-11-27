@@ -9,8 +9,8 @@ $this->lang->load('form');
 <head>
 	<title><?= $title ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/default.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/bootstrap/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/base.css">
 </head>
 <body>
 
