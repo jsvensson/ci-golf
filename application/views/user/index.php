@@ -17,7 +17,7 @@
 			<td><a href="<?= base_url() . 'admin/user/' . $user['id'] ?>"><?= $user['fullname'] ?></a></td>
 			<td><?= $user['username'] ?></td>
 			<td class="user status _<?= $user['status'] ?>"><?= $this->lang->line('user_active_status_' . $user['status']) ?></td>
-			<td class="user level _<?= $user['level'] ?>"><?= $this->lang->line('user_level_' . $user['level']) ?></td>
+			<td class="user level _<?= $user['level'] ?>"><?= $user['level'] ?> &ndash; <?= $this->lang->line('user_level_' . $user['level']) ?></td>
 		</tr>
 <?php endforeach ?>
 	</table>
