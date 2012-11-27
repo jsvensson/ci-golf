@@ -4,5 +4,5 @@
 */cache/!index.html
 /application/helpers/password_helper.php
 /assets/images/
-/assets/css/default.css
+/assets/css/*.css
 /application/config/database.php
