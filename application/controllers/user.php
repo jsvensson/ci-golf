@@ -91,6 +91,7 @@ class User extends MY_Controller
 		}
 		else {
 			// wrong credentials, do stuff
+			$this->data['title'] = "Felaktig inloggning";
 			$this->data['subview'] = 'user/error_login_incorrect';
 			$this->load->view('layouts/default', $this->data);
 		}

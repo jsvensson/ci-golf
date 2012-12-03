@@ -11,6 +11,7 @@ class User_credentials {
 			return TRUE;
 		}
 		else {
+			$CI->data['title'] = "Inloggning krävs";
 			$CI->data['subview'] = 'user/error_requires_login';
 			$CI->load->view('layouts/default', $CI->data);
 		}
