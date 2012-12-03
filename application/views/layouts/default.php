@@ -10,7 +10,7 @@ $this->lang->load('form');
 	<title><?= $title ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/bootstrap/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/base.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/screen.css" media="screen">
 </head>
 <body>
 
