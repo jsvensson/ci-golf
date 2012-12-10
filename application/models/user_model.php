@@ -10,7 +10,7 @@ class User_model extends CI_Model {
 
 	public function get_user($user = FALSE, $type = FALSE)
 	{
-		$this->db->select("*, CONCAT_WS(' ', firstname, lastname) AS fullname", false);
+		$this->db->select("*, CONCAT_WS(' ', firstname, lastname) AS fullname", FALSE);
 
 		if ($user === FALSE)
 		{
