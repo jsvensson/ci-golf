@@ -2,7 +2,7 @@
 
 <?= validation_errors() ?>
 
-<?= form_open('user/join') ?>
+<?= form_open('join') ?>
 
 <label for="username"><?= $this->lang->line('form_label_email') ?></label>
 <input type="text" name="username" placeholder="<?= $this->lang->line('form_placeholder_email') ?>" value="<?= set_value('username'); ?>">
