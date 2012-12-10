@@ -52,8 +52,7 @@ class User_model extends CI_Model {
 			'username'  => $this->input->post('username'),
 			'firstname' => trim($this->input->post('firstname')),
 			'lastname'  => trim($this->input->post('lastname')),
-			'level'     => $this->input->post('level'),
-			'password'  => $salted_pw,
+			'password'  => $salted_pw
 		);
 
 		if ($id) {
