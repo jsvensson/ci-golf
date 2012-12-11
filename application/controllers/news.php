@@ -44,13 +44,13 @@ class News extends MY_Controller {
 		}
 	}
 
-	public function view($id)
+	public function view($news_id)
 	{
-		$this->data['news_item'] = $this->news_model->get_news($id);
+		$this->data['news_item'] = $this->news_model->get_news($news_id);
 
 		if (empty($data['news_item']))
 		{
-			show_404('News controller: ' . $id);
+			show_404('News controller: ' . $news_id);
 		}
 
 		$this->data['title'] = $this->data['news_item']['title'];
