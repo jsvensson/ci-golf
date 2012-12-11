@@ -12,7 +12,7 @@ class News extends MY_Controller {
 	{
 		$this->data['active_nav_tab'] = 'news';
 		$this->data['subview'] = 'news/index';
-		$this->data['news'] = $this->news_model->get_news();
+		$this->data['news'] = $this->news_model->get_all_news();
 		$this->data['title'] = 'Nyheter';
 
 		$this->load->view('layouts/default', $this->data);

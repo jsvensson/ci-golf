@@ -8,27 +8,28 @@ class User_model extends CI_Model {
 		$this->load->helper('password');
 	}
 
-	public function get_user($user = FALSE, $type = FALSE)
+	public function get_all_users()
+	{
+		$this->db->select("*, CONCAT_WS(' ', firstname, lastname) AS fullname", FALSE);
+		$query = $this->db->get('User');
+		return $query->result_array();
+	}
+
+	private function get_user($user, $type = 'id')
 	{
 		$this->db->select("*, CONCAT_WS(' ', firstname, lastname) AS fullname", FALSE);
 
-		if ($user === FALSE)
-		{
-			$query = $this->db->get('user');
-			return $query->result_array();
-		}
-
 		// Get by id or email
-		if ($user && $type) {
-			if ($type === "email") {
-				$this->db->where('username', $user);
-			}
-			elseif ($type === "id") {
-				$this->db->where('id', $user);
-			}
-			$query = $this->db->get('user', 1);
-			return $query->row();
+
+		if ($type === "email") {
+			$this->db->where('username', $user);
 		}
+		elseif ($type === "id") {
+			$this->db->where('id', $user);
+		}
+		$query = $this->db->get('User', 1);
+		return $query->row();
+
 	}
 
 	// Convenience wrappers for get_user()
@@ -57,10 +58,10 @@ class User_model extends CI_Model {
 
 		if ($id) {
 			$this->db->where('id', $id);
-			return $this->db->update('user', $data);
+			return $this->db->update('User', $data);
 		}
 		else {
-			return $this->db->insert('user', $data);
+			return $this->db->insert('User', $data);
 		}
 	}
 }

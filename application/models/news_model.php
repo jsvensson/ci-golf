@@ -7,15 +7,17 @@ class News_model extends CI_Model {
 		$this->load->database();
 	}
 
-	public function get_news($id = FALSE)
+	public function get_all_news()
 	{
-		if ($id === FALSE)
-		{
-			$query = $this->db->get('news');
-			return $query->result_array();
-		}
+		$query = $this->db->get('News');
+		return $query->row_array();
+	}
 
-		$query = $this->db->get_where('news', array('id' => $id));
+	public function get_news($news_id)
+	{
+		$query = $this->db
+			->get('News')
+			->where('id', $id);
 		return $query->row_array();
 	}
 
@@ -31,7 +33,7 @@ class News_model extends CI_Model {
 			'text'  => $this->input->post('text')
 		);
 
-		return $this->db->insert('news', $data);
+		return $this->db->insert('News', $data);
 	}
 }
 

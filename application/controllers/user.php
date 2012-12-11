@@ -15,7 +15,7 @@ class User extends MY_Controller
 		if ($this->user_credentials->is_logged_in()) {
 			$this->lang->load('status');
 
-			$this->data['userlist'] = $this->user_model->get_user();
+			$this->data['userlist'] = $this->user_model->get_all_users();
 			$this->data['title'] = 'Visar användare';
 			$this->data['subview'] = 'user/index';
 			$this->load->view('layouts/default', $this->data);
@@ -73,7 +73,7 @@ class User extends MY_Controller
 		$row = $this->user_model->get_user_by_email($user);
 
 		// User active?
-		$is_active = ($row->status == 1);
+		$is_active = ($row->active == 1);
 
 		// Check credentials
 		if (!$is_active) {
