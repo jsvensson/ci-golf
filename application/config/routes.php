@@ -69,6 +69,11 @@
 	$route['admin/list/users'] = 'user/index';
 
 ////////////////////////////////////////////////////
+// Group controller
+
+	$route['groups'] = 'group/index';
+
+////////////////////////////////////////////////////
 // Static routes
 
 	$route['(:any)']             = 'pages/view/$1';
