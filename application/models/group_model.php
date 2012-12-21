@@ -8,7 +8,7 @@ class Group_model extends CI_Model
 		$this->load->database();
 	}
 
-	public function get_all_groups($page_num = 0, $groups_per_page = 20)
+	public function get_all_groups()
 	{
 		$this->db
 			->select('G.id, G.name, COUNT(*) AS member_count')
