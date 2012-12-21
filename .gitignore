@@ -1,3 +1,4 @@
+*.sublime-*
 */cache/!index.html
 */cache/*
 */logs/!index.html
