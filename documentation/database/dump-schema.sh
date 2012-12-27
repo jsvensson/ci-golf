@@ -1,3 +1,3 @@
 #/bin/sh
 
-/Applications/MAMP/Library/bin/mysqldump -d -h localhost -u root -proot gatecom_golf > schema.sql
+/Applications/MAMP/Library/bin/mysqldump -d -h localhost -u root -pkvastskaft gatecom_golf > schema.sql
