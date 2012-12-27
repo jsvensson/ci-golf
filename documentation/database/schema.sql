@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.9, for osx10.6 (i386)
+-- MySQL dump 10.13  Distrib 5.5.25, for osx10.6 (i386)
 --
 -- Host: localhost    Database: gatecom_golf
 -- ------------------------------------------------------
--- Server version	5.5.9
+-- Server version	5.5.25
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,7 +16,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Group`
+-- Table structure for table `Groups`
 --
 
 DROP TABLE IF EXISTS `Groups`;
@@ -26,7 +26,7 @@ CREATE TABLE `Groups` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(40) DEFAULT 'Ny grupp',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,11 +87,11 @@ CREATE TABLE `User` (
   `password` char(40) NOT NULL DEFAULT '',
   `handicap` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `UserGroup`
+-- Table structure for table `UserGroups`
 --
 
 DROP TABLE IF EXISTS `UserGroups`;
@@ -109,10 +109,10 @@ CREATE TABLE `UserGroups` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `ci_sessions`
+-- Table structure for table `UserSessions`
 --
 
-DROP TABLE IF EXISTS UserSessions;
+DROP TABLE IF EXISTS `UserSessions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `UserSessions` (
@@ -125,6 +125,40 @@ CREATE TABLE `UserSessions` (
   KEY `last_activity_idx` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Temporary table structure for view `get_all_groups`
+--
+
+DROP TABLE IF EXISTS `get_all_groups`;
+/*!50001 DROP VIEW IF EXISTS `get_all_groups`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `get_all_groups` (
+  `id` int(11),
+  `name` varchar(40),
+  `member_count` decimal(23,0)
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Final view structure for view `get_all_groups`
+--
+
+/*!50001 DROP TABLE IF EXISTS `get_all_groups`*/;
+/*!50001 DROP VIEW IF EXISTS `get_all_groups`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = latin1 */;
+/*!50001 SET character_set_results     = latin1 */;
+/*!50001 SET collation_connection      = latin1_swedish_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `get_all_groups` AS select `G`.`id` AS `id`,`G`.`name` AS `name`,sum((case when isnull(`UG`.`user_id`) then 0 else 1 end)) AS `member_count` from (`groups` `G` left join `usergroups` `UG` on((`UG`.`group_id` = `G`.`id`))) group by `G`.`id`,`G`.`name` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -135,4 +169,4 @@ CREATE TABLE `UserSessions` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-12-11 11:38:42
+-- Dump completed on 2012-12-27 14:09:05

@@ -10,11 +10,7 @@ class Group_model extends CI_Model
 
 	public function get_all_groups()
 	{
-		$this->db
-			->select('G.id, G.name, COUNT(*) AS member_count')
-			->join('UserGroups UG', 'UG.group_id = G.id')
-			->group_by('G.id, G.name');
-		$query = $this->db->get('Groups G');
+		$query = $this->db->get('get_all_groups');
 		return $query->result_array();
 	}
 
