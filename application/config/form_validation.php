@@ -6,7 +6,7 @@ $config = array(
 		array(
 			'field' => 'username',
 			'label' => 'lang:form_name_username',
-			'rules' => 'trim|required|is_unique[user.username]|valid_email'
+			'rules' => 'trim|required|is_unique[User.username]|valid_email'
 		),
 		array(
 			'field' => 'password',
