@@ -16,6 +16,14 @@ $this->lang->load('form');
 
 <?php $this->load->view('partials/header_menu', $this->data); ?>
 
+<?php
+if (isset($this->data['submenu'])): ?>
+	<div class="container">
+
+<?php	$this->load->view($this->data['submenu']); ?>
+	</div>
+<?php endif ?>
+
 	<div class="container">
 
 <?php $this->load->view($this->data['subview'], $this->data) ?>
