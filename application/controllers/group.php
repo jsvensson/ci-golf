@@ -14,6 +14,7 @@ class Group extends MY_Controller
 		$this->data['grouplist'] = $this->group_model->get_all_groups();
 		$this->data['title'] = 'Visar grupper';
 		$this->data['subview'] = 'group/index';
+		$this->data['submenu'] = 'partials/menu_sub_group';
 		$this->load->view('layouts/default', $this->data);
 	}
 
