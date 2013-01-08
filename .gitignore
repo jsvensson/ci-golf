@@ -3,6 +3,7 @@
 */cache/*
 */logs/!index.html
 */logs/*
+.DS_Store
 /.bundle/
 /application/config/database.php
 /application/helpers/password_helper.php
