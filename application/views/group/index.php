@@ -5,7 +5,7 @@
 			<tr>
 				<th>ID</th>
 				<th>Namn</th>
-				<th>Deltagare</th>
+				<th>Medlemmar</th>
 			</tr>
 	</thead>
 <?php foreach ($grouplist as $group): ?>
