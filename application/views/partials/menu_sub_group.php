@@ -1,12 +1,13 @@
 <div class="btn-group">
-	<button class="btn"><i class="icon-list"></i> <?= anchor('groups', 'Visa grupper') ?></button>
-	<button class="btn" onclick="javascript:openWell('well_add_group')"><i class="icon-plus"></i> Skapa grupp</button>
+	<a class="btn" href="<?= base_url(); ?>groups/"><i class="icon-list"></i> Visa grupper</a>
+	<a class="btn" onclick="javascript:openWell('well_add_group')"><i class="icon-plus"></i> Skapa grupp</a>
 </div>
 
 <div class="well well-edit well-submenu attr-hidden" id="well_add_group">
 	<h4>Skapa grupp</h4>
 
-	<form class="form-horizontal">
+	<form class="form-horizontal" method="post">
+
 		<div class="control-group">
 			<label class="control-label">Namn</label>
 			<div class="controls">
@@ -20,6 +21,7 @@
 				<label class="radio">
 					<input type="radio" name="show_membership" value="public" checked>Öppen grupp (alla kan gå med)
 				</label>
+
 				<label class="radio">
 					<input type="radio" name="show_membership" value="hidden">Privat grupp (inbjudan krävs)
 				</label>
@@ -35,13 +37,12 @@
 			</div>
 		</div>
 
-
 		<div class="control-group">
 			<div class="controls">
-				<button class="btn">Avbryt</button>
-				<button class="btn"><i class="icon-plus"></i> Skapa grupp</button>
+				<button class="btn btn-cancel" type="button" onclick="javascript:closeWell('well_add_group')">Avbryt</button>
+				<button class="btn" type="submit"><i class="icon-plus"></i> Skapa grupp</button>
 			</div>
 		</div>
-	</form>
 
+	</form>
 </div>
