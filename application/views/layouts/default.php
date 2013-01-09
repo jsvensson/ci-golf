@@ -33,6 +33,7 @@ if (isset($this->data['submenu'])): ?>
 <!-- Load javascript -->
     <script type="text/javascript" src="<?= base_url(); ?>assets/js/jquery/jquery.js"></script>
     <script type="text/javascript" src="<?= base_url(); ?>assets/js/bootstrap/bootstrap.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>assets/js/golf.js"></script>
 
 </body>
 </html>
