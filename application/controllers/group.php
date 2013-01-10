@@ -18,6 +18,12 @@ class Group extends MY_Controller
 		$this->load->view('layouts/default', $this->data);
 	}
 
+	// Route /group/create - form target for creating a group
+	public function create()
+	{
+
+	}
+
 }
 
 /* EOF */
