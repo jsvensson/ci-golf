@@ -1,21 +1,9 @@
-function openWell(well) {
-	$(".well-submenu").each(
+// Open a target well
+$('.btn-open-well').click( function() {
+	$('#' + $(this).data('openref')).slideDown(500);
+});
 
-	function () {
-		if ($(this).attr("id") === well) {
-			$(this).slideDown(500);
-		} else {
-			$(this).slideUp(200);
-		}
-	});
-}
-
-function closeWell(well) {
-	$(".well-submenu").each(
-
-	function () {
-		if ($(this).attr("id") === well) {
-			$(this).slideUp(500);
-		}
-	});
-}
+// Close a target well
+$('.btn-close-well').click( function() {
+	$('#' + $(this).data('closeref')).slideUp(500);
+});
