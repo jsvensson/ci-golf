@@ -61,7 +61,7 @@
 	// User registration
 	$route['join']        = 'user/join';
 
-	// Log in/out
+	// Log in/out form targets
 	$route['user/login']  = 'user/login';
 	$route['user/logout'] = 'user/logout';
 
@@ -72,6 +72,9 @@
 // Group controller
 
 	$route['groups'] = 'group/index';
+
+	// Form targets
+	$route['group/create'] = 'group/create';
 
 ////////////////////////////////////////////////////
 // Static routes
