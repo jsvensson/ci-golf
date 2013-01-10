@@ -6,6 +6,7 @@
 <div class="well well-edit well-submenu attr-hidden" id="well_add_group">
 	<h4>Skapa grupp</h4>
 
+	<?= form_open('group/create', array('class' => 'form-horizontal')) ?>
 	<form class="form-horizontal" method="post">
 
 		<div class="control-group">
@@ -44,5 +45,5 @@
 			</div>
 		</div>
 
-	</form>
+	<?= form_close(); ?>
 </div>
