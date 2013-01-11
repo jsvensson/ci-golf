@@ -8,12 +8,12 @@ class Group extends MY_Controller
 		$this->load->model('group_model');
 	}
 
-	// Route /groups - shows all groups
+	// Route /group/list - shows all groups
 	public function index()
 	{
 		$this->data['grouplist'] = $this->group_model->get_all_groups();
 		$this->data['title'] = 'Visar grupper';
-		$this->data['subview'] = 'group/index';
+		$this->data['subview'] = 'group/list';
 		$this->data['submenu'] = 'partials/menu_sub_group';
 		$this->load->view('layouts/default', $this->data);
 	}

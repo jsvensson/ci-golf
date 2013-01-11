@@ -8,5 +8,5 @@
 
 <ul>
 	<li><?= anchor('admin/list/users', 'Admin: Lista användare') ?></li>
-	<li><?= anchor('groups', 'Visa alla grupper') ?></li>
+	<li><?= anchor('group/list', 'Visa alla grupper') ?></li>
 </ul>
