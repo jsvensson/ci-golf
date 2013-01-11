@@ -10,5 +10,8 @@ body
 		margin:
 			top: 0px
 	// End override
+	&.well-submenu
+		// No min-height on submenu wells, messes with animations
+		min-height: 0
 	&.well-edit
 		background-color: $color-well-edit-bg
