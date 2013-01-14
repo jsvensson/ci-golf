@@ -24,6 +24,14 @@ class Group_model extends CI_Model
 		return $query->row();
 	}
 
+	public function set_group($id = NULL)
+	{
+		$data = array(
+			'name' => $this->input->post('group_name')
+		);
+		return $this->db->insert('Groups', $data);
+	}
+
 }
 
 /* EOF */
