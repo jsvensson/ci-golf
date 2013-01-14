@@ -19,6 +19,7 @@ $config = array(
 			'rules' => 'required'
 		)
 	),
+
 	// user/settings, form rules for modifying user settings
 	'user/settings' => array(
 		array(
