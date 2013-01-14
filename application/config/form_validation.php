@@ -36,7 +36,17 @@ $config = array(
 			'label' => 'lang:form_name_verify_password',
 			'rules' => 'required'
 		)
+	),
+
+	// group/create, form rules for creating a new group
+	'group/create' => array(
+		array(
+			'field' => 'name',
+			'label' => 'Group name',
+			'rules' => 'trim|min_length[5]'
+		)
 	)
+
 );
 
 /* EOF */
