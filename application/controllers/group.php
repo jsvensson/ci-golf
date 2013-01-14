@@ -21,7 +21,17 @@ class Group extends MY_Controller
 	// Route /group/create - form target for creating a group
 	public function create()
 	{
+		$this->load->library('form_validation');
+		$this->lang->load('form');
 
+		if ($this->form_validation->run() === FALSE) {
+			// Validation failed
+		}
+		else {
+			// Validation passed, add user
+			$this->group_model->set_group();
+			redirect_to('group/list');
+		}
 	}
 
 }
