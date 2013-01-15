@@ -64,7 +64,7 @@ $config = array(
 		array(
 			'field' => 'name',
 			'label' => 'Group name',
-			'rules' => 'trim|min_length[5]'
+			'rules' => 'trim|required|min_length[5]'
 		)
 	)
 
