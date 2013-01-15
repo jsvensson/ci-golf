@@ -17,7 +17,7 @@
 				</div>
 			</td>
 			<td><?= $group['id'] ?></td>
-			<td><?= $group['name'] ?></td>
+			<td><a href="<?= url_to('group/show/' . $group['id']); ?>"><?= $group['name'] ?></a></td>
 			<td><?= $group['member_count'] ?></td>
 		</tr>
 <?php endforeach ?>
