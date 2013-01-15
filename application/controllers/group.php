@@ -28,7 +28,7 @@ class Group extends MY_Controller
 			// Validation failed
 		}
 		else {
-			// Validation passed, add user
+			// Validation passed, add group
 			$this->group_model->set_group();
 			redirect_to('group/list');
 		}
