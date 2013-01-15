@@ -17,7 +17,8 @@ class Group_model extends CI_Model
 	public function get_group($group_id)
 	{
 		$this->db
-			->get('Groups')
+			->select('*')
+			->from('Groups')
 			->where('id', $group_id)
 			->limit(1);
 		$query = $this->db->get();
