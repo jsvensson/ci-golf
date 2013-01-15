@@ -8,7 +8,7 @@ class Group extends MY_Controller
 		$this->load->model('group_model');
 	}
 
-	// Route /group/list - shows all groups
+	// Route group/list - shows all groups
 	public function index()
 	{
 		$this->data['grouplist'] = $this->group_model->get_all_groups();
@@ -18,7 +18,7 @@ class Group extends MY_Controller
 		$this->load->view('layouts/default', $this->data);
 	}
 
-	// Route /group/create - form target for creating a group
+	// Route group/create - form target for creating a group
 	public function create()
 	{
 		$this->load->library('form_validation');
