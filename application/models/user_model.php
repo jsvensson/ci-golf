@@ -51,8 +51,8 @@ class User_model extends CI_Model {
 
 		$data = array(
 			'username'  => $this->input->post('username'),
-			'firstname' => trim($this->input->post('firstname')),
-			'lastname'  => trim($this->input->post('lastname')),
+			'firstname' => $this->input->post('firstname'),
+			'lastname'  => $this->input->post('lastname'),
 			'password'  => $salted_pw
 		);
 
