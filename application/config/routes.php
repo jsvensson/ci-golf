@@ -45,7 +45,7 @@
 // News controller
 
 	$route['news/create']        = 'news/create';
-	$route['news/(:num)/(:any)'] = 'news/view/$1';
+	$route['news/(:num)/(:any)'] = 'news/show/$1';
 	$route['news']               = 'news/index';
 
 ////////////////////////////////////////////////////
@@ -56,7 +56,7 @@
 	$route['home/settings'] = 'user/settings';
 
 	// View user page
-	$route['user/(:num)'] = "user/view/$1";
+	$route['user/(:num)'] = "user/show/$1";
 
 	// User registration
 	$route['join']        = 'user/join';
@@ -72,7 +72,7 @@
 // Group controller
 
 	$route['group/list']        = 'group/index';
-	$route['group/view/(:num)'] = 'group/view/$1';
+	$route['group/show/(:num)'] = 'group/show/$1';
 	$route['group/edit/(:num)'] = 'group/edit/$1';
 
 	// Form targets

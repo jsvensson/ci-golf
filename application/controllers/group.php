@@ -34,10 +34,10 @@ class Group extends MY_Controller
 		}
 	}
 
-	public function view($id)
+	public function show($id)
 	{
 		$this->data['group']   = $this->group_model->get_group($id);
-		$this->data['subview'] = 'group/view';
+		$this->data['subview'] = 'group/show';
 		$this->data['submenu'] = 'partials/menu_sub_group';
 		$this->load->view('layouts/default', $this->data);
 	}
