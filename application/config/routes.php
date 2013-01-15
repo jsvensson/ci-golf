@@ -71,7 +71,9 @@
 ////////////////////////////////////////////////////
 // Group controller
 
-	$route['group/list'] = 'group/index';
+	$route['group/list']        = 'group/index';
+	$route['group/view/(:num)'] = 'group/view/$1';
+	$route['group/edit/(:num)'] = 'group/edit/$1';
 
 	// Form targets
 	$route['group/create'] = 'group/create';
