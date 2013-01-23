@@ -10,7 +10,7 @@ class Group_model extends CI_Model
 
 	public function get_all_groups()
 	{
-		$query = $this->db->get('get_all_groups');
+		$query = $this->db->get('Groups_With_Members');
 		return $query->result_array();
 	}
 
