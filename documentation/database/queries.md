@@ -1,13 +1,13 @@
 # SQL queries
 
-Select non-members of a group
+## Select non-members of a group
 
-    SELECT id, username
-      FROM User U
-      LEFT JOIN UserGroups UG
-        ON (UG.user_id = U.id)
-      WHERE UG.group_id != 4
-        OR UG.group_ID IS NULL
+    SELECT U.id, U.username
+    FROM User U
+    WHERE U.id NOT IN (
+      SELECT UG.user_id from UserGroups UG
+      WHERE group_id = 4
+    );
 
 Create stored procedure of above:
 
@@ -15,11 +15,11 @@ Create stored procedure of above:
     DELIMITER //
      CREATE PROCEDURE get_nonmembers_of_group(IN iGroupId INT)
         BEGIN
-          SELECT id, username
-            FROM User U
-            LEFT JOIN UserGroups UG
-              ON (UG.user_id = U.id)
-            WHERE UG.group_id != iGroupId
-              OR UG.group_ID IS NULL;
+          SELECT U.id, U.username
+          FROM User U
+          WHERE U.id NOT IN (
+            SELECT UG.user_id from UserGroups UG
+            WHERE group_id = 4
+          );
         END//
      DELIMITER ;
