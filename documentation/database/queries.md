@@ -23,3 +23,17 @@ Create stored procedure of above:
           );
         END//
      DELIMITER ;
+
+## View for group with member count
+
+    DROP VIEW IF EXISTS Groups_With_Members;
+    CREATE VIEW Groups_With_Members
+      AS SELECT
+        G.id AS id,
+        G.name AS name,
+        G.description AS description,
+        SUM((CASE WHEN isnull(UG.user_id) THEN 0 ELSE 1 END)) AS member_count
+      FROM Groups G
+      LEFT JOIN UserGroups UG
+        ON UG.group_id = G.id
+      GROUP BY G.id, G.name;
