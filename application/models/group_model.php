@@ -14,6 +14,17 @@ class Group_model extends CI_Model
 		return $query->result_array();
 	}
 
+	public function get_group_members($group_id)
+	{
+		$this->db
+			->select('*')
+			->from('User U')
+			->join('UserGroups UG', 'U.id = UG.user_id')
+			->where('UG.group_id', $group_id);
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
 	public function get_group($group_id)
 	{
 		$this->db
