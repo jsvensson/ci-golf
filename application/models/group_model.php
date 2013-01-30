@@ -14,7 +14,7 @@ class Group_model extends CI_Model
 		return $query->result_array();
 	}
 
-	public function get_group_members($group_id)
+	public function get_members_of_group($group_id)
 	{
 		$this->db
 			->select('*')

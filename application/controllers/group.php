@@ -37,7 +37,7 @@ class Group extends MY_Controller
 	public function show($group_id)
 	{
 		$this->data['group']   = $this->group_model->get_group($group_id);
-		$this->data['group_members'] = $this->group_model->get_group_members($group_id);
+		$this->data['group_members'] = $this->group_model->get_members_of_group($group_id);
 		$this->data['subview'] = 'group/show';
 		$this->data['submenu'] = 'partials/menu_sub_group';
 		$this->load->view('layouts/default', $this->data);
