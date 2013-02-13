@@ -27,7 +27,7 @@ class Group_model extends CI_Model
 
   public function get_nonmembers_of_group($group_id)
   {
-    $query = $this->db->query("SELECT U.id, U.username, U.firstname, U.lastname, CONCAT_WS(' ', U.firstname, U.lastname) AS fullname FROM User U WHERE U.id NOT IN ( SELECT UG.user_id from UserGroups UG WHERE group_id = " . $group_id . ");");
+    $query = $this->db->query("CALL get_nonmembers_of_group(?);", $group_id);
     return $query->result_array();
   }
 
