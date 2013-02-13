@@ -1,12 +1,11 @@
+**/!index.html
 *.sublime-*
-*/cache/!index.html
 */cache/*
-*/logs/!index.html
 */logs/*
 .DS_Store
 /.bundle/
 /application/config/database.php
 /application/helpers/password_helper.php
-/assets/css/*.css
+/assets/**/*.css
 /assets/images/
 /vendor/
