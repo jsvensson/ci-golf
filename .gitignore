@@ -1,7 +1,6 @@
+**/!index.html
 *.sublime-*
-*/cache/!index.html
 */cache/*
-*/logs/!index.html
 */logs/*
 .DS_Store
 /.bundle/
