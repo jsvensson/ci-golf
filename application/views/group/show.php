@@ -5,7 +5,11 @@
 <h3>Medlemmar</h3>
 
 <?php foreach ($group_members as $member): ?>
+  <?= $member['username'] ?><br>
+<?php endforeach ?>
 
-<?= $member['username'] ?><br>
+<h3>Lägg till medlem</h3>
 
+<?php foreach ($group_nonmembers as $member): ?>
+  <?= $member['username'] ?><br>
 <?php endforeach ?>
