@@ -17,7 +17,7 @@ class Group_model extends CI_Model
 	public function get_members_of_group($group_id)
 	{
 		$this->db
-			->select('*')
+			->select("*, CONCAT_WS(' ', firstname, lastname) AS fullname", false)
 			->from('User U')
 			->join('UserGroups UG', 'U.id = UG.user_id')
 			->where('UG.group_id', $group_id);
