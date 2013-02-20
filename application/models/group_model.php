@@ -28,7 +28,7 @@ class Group_model extends CI_Model
   public function get_nonmembers_of_group($group_id)
   {
     $query = $this->db->query("CALL get_nonmembers_of_group(?);", $group_id);
-    return $query->result_array();
+    return $query->result();
   }
 
 	public function get_group($group_id)
