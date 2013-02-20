@@ -1,15 +1,38 @@
-<h3>Visar grupp <?= $this->data['group']->id ?></h3>
+<h3>Grupp <?= $this->data['group']->id ?> &mdash; <?= $this->data['group']->name ?></h3>
 
-<?php $this->dbug->inspect($this->data['group']); ?>
+<?= $this->dbug->inspect($group); ?>
 
-<h3>Medlemmar</h3>
 
-<?php foreach ($group_members as $member): ?>
-  <?= $member['username'] ?><br>
-<?php endforeach ?>
+<table class="table table-striped">
+  <tr>
+    <th>Namn</th>
+    <th>Handikapp</th>
+    <th colspan="2">Poäng</th>
+  </tr>
+  <?php foreach ($group_members as $member): ?>
+  <tr>
+    <td><?= $member['fullname'] ?></td>
+    <td><?= rand(0, 12); ?></td>
+    <td><?= rand(20, 150); ?></td>
+    <td>
+      <div class="btn-group">
+        <button class="btn btn-mini" title="Ta bort från grupp"><i class="icon-minus"></i></button>
+      </div>
+    </td>
+  </tr>
+  <?php endforeach ?>
 
-<h3>Lägg till medlem</h3>
+</table>
+
+<h3>Lägg till medlemmar</h3>
+
+<?= form_open('group/add_members', array('class' => ''), array('group_id' => 5)) ?>
 
 <?php foreach ($group_nonmembers as $member): ?>
-  <?= $member['username'] ?><br>
+<label class="checkbox"><input type="checkbox" value="<?= $member['id'] ?>"><?= $member['username'] ?></label><br>
 <?php endforeach ?>
+
+<button class="btn" type="submit"><i class="icon-plus"></i> Lägg till</button>
+
+<?= form_close(); ?>
+
