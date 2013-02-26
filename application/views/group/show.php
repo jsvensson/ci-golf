@@ -11,7 +11,7 @@
   </tr>
   <?php foreach ($group_members as $member): ?>
   <tr>
-    <td><?= $member['fullname'] ?></td>
+    <td><?= $member->fullname ?></td>
     <td><?= rand(0, 12); ?></td>
     <td><?= rand(20, 150); ?></td>
     <td>
@@ -29,7 +29,7 @@
 <?= form_open('group/add_members', array('class' => ''), array('group_id' => 5)) ?>
 
 <?php foreach ($group_nonmembers as $member): ?>
-<label class="checkbox"><input type="checkbox" value="<?= $member['id'] ?>"><?= $member['username'] ?></label><br>
+<label class="checkbox"><input type="checkbox" value="<?= $member->id ?>"><?= $member->username ?></label><br>
 <?php endforeach ?>
 
 <button class="btn" type="submit"><i class="icon-plus"></i> Lägg till</button>
