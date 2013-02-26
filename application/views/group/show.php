@@ -26,7 +26,7 @@
 <?= form_open('group/add_players', array('class' => ''), array('group_id' => 5)) ?>
 
 <?php foreach ($group_nonplayers as $player): ?>
-<label class="checkbox"><input type="checkbox" name="id[]" value="<?= $player->id ?>"><?= $player->id ?> <?= $player->username ?></label><br>
+<label class="checkbox"><input type="checkbox" name="user_id[]" value="<?= $player->id ?>"><?= $player->id ?> <?= $player->username ?></label><br>
 <?php endforeach ?>
 
 <button class="btn" type="submit"><i class="icon-plus"></i> Lägg till</button>
