@@ -6,9 +6,9 @@
     <th>Handikapp</th>
     <th colspan="2">Poäng</th>
   </tr>
-  <?php foreach ($group_members as $member): ?>
+  <?php foreach ($group_players as $player): ?>
   <tr>
-    <td><?= $member->fullname ?></td>
+    <td><?= $player->fullname ?></td>
     <td><?= rand(0, 12); ?></td>
     <td><?= rand(20, 150); ?></td>
     <td>
@@ -23,10 +23,10 @@
 
 <h3>Lägg till medlemmar</h3>
 
-<?= form_open('group/add_members', array('class' => ''), array('group_id' => 5)) ?>
+<?= form_open('group/add_players', array('class' => ''), array('group_id' => 5)) ?>
 
-<?php foreach ($group_nonmembers as $member): ?>
-<label class="checkbox"><input type="checkbox" value="<?= $member->id ?>"><?= $member->username ?></label><br>
+<?php foreach ($group_nonplayers as $player): ?>
+<label class="checkbox"><input type="checkbox" value="<?= $player->id ?>"><?= $player->username ?></label><br>
 <?php endforeach ?>
 
 <button class="btn" type="submit"><i class="icon-plus"></i> Lägg till</button>
