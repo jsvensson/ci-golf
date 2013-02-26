@@ -1,8 +1,5 @@
 <h3>Grupp <?= $this->data['group']->id ?> &mdash; <?= $this->data['group']->name ?></h3>
 
-<?= $this->dbug->inspect($group); ?>
-
-
 <table class="table table-striped">
   <tr>
     <th>Namn</th>
