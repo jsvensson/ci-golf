@@ -5,3 +5,7 @@
 <h3>Dumping GET contents</h3>
 
 <?php $this->dbug->inspect($this->input->get(NULL, TRUE)); ?>
+
+<h3>Dumping page data</h3>
+
+<?php $this->dbug->inspect($this->data); ?>
