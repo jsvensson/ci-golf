@@ -76,7 +76,8 @@
 	$route['group/edit/(:num)'] = 'group/edit/$1';
 
 	// Form targets
-	$route['group/create'] = 'group/create';
+  $route['group/create']      = 'group/create';
+  $route['group/add_players'] = 'group/add_player_to_group';
 
 ////////////////////////////////////////////////////
 // Static routes
