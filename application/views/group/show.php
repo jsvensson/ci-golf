@@ -1,4 +1,4 @@
-<h3>Grupp <?= $this->data['group']->id ?> &mdash; <?= $this->data['group']->name ?></h3>
+<h3>Grupp <?= $group->id ?> &mdash; <?= $group->name ?></h3>
 
 <table class="table table-striped">
   <tr>
@@ -23,7 +23,7 @@
 
 <h3>Lägg till medlemmar</h3>
 
-<?= form_open('group/add_players', array('class' => ''), array('group_id' => 5)) ?>
+<?= form_open('group/add_players', array('class' => ''), array('group_id' => $group->id)) ?>
 
 <?php foreach ($group_nonplayers as $player): ?>
 <label class="checkbox"><input type="checkbox" name="user_id[]" value="<?= $player->id ?>"><?= $player->id ?> <?= $player->username ?></label><br>
